@@ -1,0 +1,558 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+    /* Varela Round */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /* Raleway */
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        
+        #settings {
+             overflow: auto;
+             position: absolute;
+        	 left: 50%;
+        	 top: 50%;
+        	 transform: translate(-50%, -50%);
+             background-color: #111111;
+             height: 70%;
+             width: 70%;
+             border-radius: 10px;
+             border: 2px solid #00008b;
+             outline: none;
+         }
+         
+         .settings-i {
+             margin-right: 5px;
+             font-family: Varela Round, Arial, sans-serif;
+             font-size: 15px;
+        	 width: 30%;
+             height: 40px;
+        	 border-radius: 6px;
+             border: 0;
+             font-weight: bold;
+             text-align: center;
+             background-color: #1a2023;
+             color: #fff;
+             transition: 0.25s all ease;
+             border: 2px solid #000;
+         }    
+     
+         .settings-i:hover {
+          border: 2px solid #005;
+          cursor: pointer;
+         }
+         
+         .settings-i:focus { 
+         border: 2px solid #4196e1; 
+         width: 40%;
+         cursor: text;
+         }
+     
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://64.media.tumblr.com/d60fa89a6c6ef6b51790a079d7204540/f145147b69889cf3-a3/s640x960/1d7480b51aa3c7cfc46d85641dfd9f759eeadd95.gif');
+            background-color: #005;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #fff;
+            font-family: Varela Round, Trebuchet MS, Arial;
+            text-align: center;
+        }
+
+        #searchbar{ /* Credits to https://github.com/RicardoMarioSonic123 */
+            font-family: Raleway, Arial;
+            font-size: 15px;
+            padding: 15px;
+            width: 20%;
+            border-radius: 6px;
+            border: 0;
+            font-weight: 552;
+            text-align: center;
+            background-color: #003d80;
+            color: #4169E1;
+            transition: 0.3s all ease;
+            border: 2px solid #121c7b;
+        }
+        
+        #searchbar:hover{
+            cursor: pointer;
+            background-color: #23278d;
+            border: 2px solid #4196e1;
+        }
+        
+        #searchbar:active{
+            background-color: paleturquoise;
+        }
+        
+        #searchbar:focus{
+            cursor: text;
+            width: 30%;
+            border: 2px solid #4196e1;
+        }
+
+        body:hover {
+            cursor: default;
+        }
+
+        h1 {
+            margin-top: 60px;
+            font-size: 24px;
+            font-weight: 700;
+            /* background-color: rgb(14, 55, 168); */
+            background: linear-gradient(#007FFF, #324AB2, #224C98);
+            border: 2px solid #4467C4;
+            box-shadow: 0 0 0 2px #00316E, 0 0 0 4px #2234A8, 0 0 0 6px #00008C;
+            border-radius: 10px;
+            padding: 5px 10.125px;
+            color:rgb(61, 136, 255);
+            background : linear-gradient(#0080FE,rgb(22, 44, 205),rgb(19, 35, 211));
+            font-family: Varela Round;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+        }
+
+        h4 {
+            font-family: 'Varela Round';
+        }
+
+        h3 {
+            font-family: 'Varela Round';
+        }
+        
+        h7 {
+            font-family: 'Varela Round';
+            font-size: 50px;
+        }
+
+        h2 {
+            font-family: 'Varela Round';
+            background: linear-gradient(#00FFFFFF,rgb(41, 177, 189),rgb(46, 91, 213));
+            box-shadow: 0 0 0 2px #00316E, 0 0 0 4px #2234A8, 0 0 0 6px #00008C;
+            border: 2px solid #4467C4;
+            border-radius: 10px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            transition: text-shadow 0.3s ease;
+        }
+
+        h6 {
+            text-align: center;
+            font-size: 20px;
+            font-family: Varela Round, Arial;
+            color: rgb(61, 136, 255);
+        }
+        
+        /* Hover effect */
+        h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+            text-shadow: 0 0 10px rgba(52, 152, 219, 0.8), 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(52, 152, 219, 0.4);
+        }
+
+        @keyframes glow {
+        0% {
+            text-shadow: 0 0 2px #f5f5f5;
+        }
+        50% {
+            text-shadow: 0 0 5px #f5f5f5;
+        }
+        100% {
+            text-shadow: 0 0 2px #f5f5f5;
+        }
+        }
+
+        @-webkit-keyframes glow {
+        0% {
+            text-shadow: 0 0 2px #f5f5f5;
+        }
+        50% {
+            text-shadow: 0 0 5px #f5f5f5;
+        }
+        100% {
+            text-shadow: 0 0 2px #f5f5f5;
+        }
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 2px;
+            margin-right: 2px;
+            padding: 10px 20px;
+            background-color: #00008B;
+            color: #00FFFF;
+            border: 2px solid #00ff;
+            border-radius: 12px; /* Create rounded rectangle edges */
+            font-weight: 700;
+            font-family: Raleway; /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
+            cursor: pointer;
+            transition: all 0.3s ease;
+            /* Smooth transition for the glow effect */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            /* Initial shadow effect */
+        }
+        
+        #button-s { 
+            bottom: 0%; 
+            right: 0%;
+            width: 150px;
+            height: 40px;
+            position: absolute;
+            z-index: 2; 
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 2px;
+            margin-right: 2px;
+            padding: 10px 20px;
+            background-color: #00008B;
+            color: #00FFFF;
+            border: 2px solid #00ff;
+            border-radius: 12px; /* Create rounded edges */
+            font-weight: 700;
+            font-family: Raleway;
+            /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
+            cursor: pointer;
+            transition: all 0.3s ease;
+            /* Smooth transition for the glow effect */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            /* Initial shadow effect */
+        }
+        
+        #button-g { 
+            bottom: 0%; 
+            left: 0%;
+            width: 150px;
+            height: 40px;
+            position: absolute;
+            z-index: 2; 
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 2px;
+            margin-right: 2px;
+            padding: 10px 20px;
+            background-color: #00008B;
+            color: #00FFFF;
+            border: 2px solid #00ff;
+            border-radius: 12px; /* Create rounded edges */
+            font-weight: 700;
+            font-family: Raleway;
+            /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
+            cursor: pointer;
+            transition: all 0.3s ease;
+            /* Smooth transition for the glow effect */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            /* Initial shadow effect */
+        }
+        
+        #button-sg { 
+            top: 0%; 
+            left: 0%;
+            width: 150px;
+            height: 40px;
+            position: absolute;
+            z-index: 2; 
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 2px;
+            margin-right: 2px;
+            padding: 10px 20px;
+            background-color: #00008B;
+            color: #00FFFF;
+            border: 2px solid #00ff;
+            border-radius: 12px; /* Create rounded edges */
+            font-weight: 700;
+            font-family: Raleway;
+            /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
+            cursor: pointer;
+            transition: all 0.3s ease;
+            /* Smooth transition for the glow effect */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            /* Initial shadow effect */
+        }
+        
+        .button-c {
+         position: absolute;
+         top: 0%;
+         right: 0%;
+         padding: 5px 10px;
+         font-size: 18px;
+         font-weight: 552;
+         font-family: Tahoma, sans-serif;
+         background-color: #00008b;
+         color: #fff;
+         border: none;
+         border-radius: 10px;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         }
+        
+        .favicon {
+             padding: 0px 0px;
+             margin: 5px;
+             border: none;
+             cursor: pointer;
+             display: inline-flex;
+             align-items: center;
+             background-color: #000; 
+             border-radius: 10px;
+             outline: none;
+         }
+    
+     .favicon img {
+         width: 30px;
+         height: 30px;
+         outline: none;
+         background-color: #fff;
+         padding: 7px 8px;
+         border-radius: 10px;  
+         transition: background-color 0.3s, transform 0.3s;
+     }
+    
+     .favicon img:hover {
+         background-color: #cccccc;
+         transform: scale(1.05);
+     }
+    
+     .favicon img:active {
+         background-color: #999999;
+         transform: scale(0.95);
+     }
+     
+     .button-c:hover {
+         background-color: #4196e1;
+     }
+    
+     .button-c:active {
+         background-color: #23278d;
+     }
+    
+        
+        .button-st {
+             margin-left: 5px;
+             margin-right: 5px;
+             margin-bottom: 10px;
+             font-size: 15px;
+             font-weight: bold;
+             font-family: Raleway, sans-serif;
+             background-color: #00008B;
+             color: #00FFFF;
+             border: 2px solid #00ff;
+             border-radius: 12px;
+             cursor: pointer;
+             width: 24.7%;
+             height: 40px;
+             margin-top: 20px;
+             transition: 0.3s all ease;
+             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+        
+        .button-sc {
+             margin-left: 5px;
+             margin-right: 5px;
+             margin-bottom: 10px;
+             font-size: 15px;
+             font-weight: bold;
+             font-family: Raleway, sans-serif;
+             background-color: #00008B;
+             color: #00FFFF;
+             border: 2px solid #00ff;
+             border-radius: 12px;
+             cursor: pointer;
+             width: 15%;
+             height: 40px;
+             margin-top: 20px;
+             transition: 0.3s all ease;
+             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+     
+     .button-st:hover {
+            background-color: #4169E1;
+            color: #00FFFF;
+            box-shadow: 0 0 15px rgb(17, 27, 215),
+                /* Glow effect */
+                0 0 30px rgba(255, 255, 255, 0.8);
+            /* More intense glow effect */
+        }
+        
+        .button-st:active {
+            background-color: #23278d;
+            color: #549ea0;
+            border: 2px solid #121c7b;
+        }
+        
+        #button-g:hover {
+            background-color: #4169E1;
+            color: #00FFFF;
+            box-shadow: 0 0 15px rgb(17, 27, 215),
+                /* Glow effect */
+                0 0 30px rgba(255, 255, 255, 0.8);
+            /* More intense glow effect */
+        }
+        
+        #button-g:active {
+            background-color: #23278d;
+            color: #549ea0;
+            border: 2px solid #121c7b;
+        }
+        
+        #button-sg:hover {
+            background-color: #4169E1;
+            color: #00FFFF;
+            box-shadow: 0 0 15px rgb(17, 27, 215),
+                /* Glow effect */
+                0 0 30px rgba(255, 255, 255, 0.8);
+            /* More intense glow effect */
+        }
+        
+        #button-sg:active {
+            background-color: #23278d;
+            color: #549ea0;
+            border: 2px solid #121c7b;
+        }
+        
+        .button-sc:hover {
+            background-color: #4169E1;
+            color: #00FFFF;
+            box-shadow: 0 0 15px rgb(17, 27, 215),
+                /* Glow effect */
+                0 0 30px rgba(255, 255, 255, 0.8);
+            /* More intense glow effect */
+        }
+        
+        .button-sc:active {
+            background-color: #23278d;
+            color: #549ea0;
+            border: 2px solid #121c7b;
+        }
+
+        .button:hover {
+            background-color: #4169E1;
+            color: #00FFFF;
+            box-shadow: 0 0 15px rgb(17, 27, 215),
+                /* Glow effect */
+                0 0 30px rgba(255, 255, 255, 0.8);
+            /* More intense glow effect */
+        }
+        
+        #button-s:hover {
+            background-color: #4169E1;
+            color: #00FFFF;
+            box-shadow: 0 0 15px rgb(17, 27, 215),
+                /* Glow effect */
+                0 0 30px rgba(255, 255, 255, 0.8);
+            /* More intense glow effect */
+        }
+        
+        #button-s:active {
+            background-color: #23278d;
+            color: #549ea0;
+            border: 2px solid #121c7b;
+        }
+        
+        .button:active {
+            background-color: #23278d;
+            color: #549ea0;
+            border: 2px solid #121c7b;
+        }
+
+        #updlog {
+            color:blue; 
+            margin-top: 15px;
+            top: 100%;
+            /*background-color: #00004b;*/
+            background : linear-gradient(#00004d,#1c2e4a,#192841);
+            border: 2px solid #000;
+            border-radius: 10px;
+            width: 60%;
+            margin: auto;
+        }
+        
+        #randomPhrase {
+            font-family: 'Varela Round';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            background-color: #00316E;
+            border: 2px solid #001C57;
+            border-radius: 6.5px;
+            padding: 5px 10.0125px;
+            color:rgb(32, 91, 241);
+            transition: all 0.3s ease, transform 0.3s;
+            /* Smooth transition for the glow effect */
+            cursor: pointer;
+        }
+
+        #randomPhrase:hover {
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            /* Initial shadow effect */
+            background-color: #4169E1;
+            color: #00FFFF;
+            box-shadow: 0 0 15px rgb(17, 27, 215),
+                /* Glow effect */
+                0 0 30px rgba(255, 255, 255, 0.8);
+            /* More intense glow effect */
+            
+        }
+        
+        #randomPhrase:active{
+            background-color: #23278d;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Updated styling for the BLOCKS message with white color */
+        #blocksMessage {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            /* White color */
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        #blocksMessage:Hover {
+            text-shadow: 0 0 5px #000; /* Add text shadow effect */
+            -webkit-animation: glow 1s; /* Add animation effect */
+            animation: glow 1s;
+        }
+
+        #movingText {
+            position: absolute;
+            top: 90px;
+            /* Adjust according to your layout */
+            left: -100%;
+            /* Start off the screen on the left */
+            font-size: 18px;
+            /* Match the font size with the blocks message */
+            font-weight: bold;
+            /* Make it bold */
+            color: #fff;
+            /* White color */
+            text-transform: uppercase;
+            /* Uppercase text for consistency */
+            animation: moveAcross 10s linear infinite;
+            /* Animation settings */
+        }
+
+        @keyframes moveAcross { /* Animate moving text from left to right */
+            0% {
+                left: -100%;
+                /* Starting position off the left */
+            }
+
+            100% {
+                left: 100%;
+                /* Ending position off the right */
+            }
+        }
