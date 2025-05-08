@@ -1,3 +1,16 @@
+// Open Update Log
+     function openUpdateLog() {
+     document.getElementById("updlog").style.display = "block";
+     }
+      
+     // Close Update Log
+     function closeUpdateLog() {
+     document.getElementById("updlog").style.display = "none";
+     document.getElementById("button-updlog").onclick = function() {
+     openUpdateLog();
+       };
+     }
+     
 // Open Settings
      function openSettings() {
      document.getElementById("settings").style.display = "block";
@@ -132,93 +145,6 @@ document.getElementById("Google").onclick = function() {
      newTab.location.href = blobUrl;
      }
 
-
-document.addEventListener("DOMContentLoaded", function() {
-      var phrases = [
-        "Chatty changed these lol",
-        "Maybe this will update... or not",
-        "Waiter, can I have a cheeseburger without cheese? -Oh, so you want a hamburger? No, I want a cheeseburger without cheese. -That's a hamburger. No it's not! I said I wanted a cheeseburger without cheese, so give me a cheeseburger without cheese! -One hamburger, coming riiight up. I said a cheeseburger without cheese!",
-        "Play Eaglercraft 1.12",
-        "chicken jockey",
-        "tralalero tralala",
-        "Play Blackjack Casino",
-        "'Youre naaasty' -Favian 2025",
-        "'How do I kill the creaking in minecraft? When I hit it, it just sprays dandruffs everywhere.' -Avitesh 2025",
-        "Frickelty frackelty, towards your computer approaches a tragedy! (its 30 tabs)",
-        "'Lock in' - Mr. B",
-        "MINIGAMES!",
-        "mfw ive been caught cheating on tests 10 times, used ai for every school essay, and get an F on everything: :D",
-        "huh",
-        "not",
-        "You're so COOL!",
-        "Snuck some gum into class 😎",
-        "I'll be needing extra baking soda. And soda. A lot of soda.",
-        "I caught you sitting for too long. Do 25 push-ups NOW!",
-        "forgot my charger",
-        "im at 20%",
-        "OfficialBarneyPlayz is cool",
-        "if someone snitches on this again istg",
-        "This webpage has been blocked with sheer determination!",
-        "School really tried 💀",
-        ":3",
-        "I like crocodiles",
-        "Am I suspicious?",
-        "Am I deemed to be sus?",
-        "NTCatGamer is really brainrot",
-        "gemini sucks",
-        "ibeatkids.com",
-        "For this experiment, we'll be needing lots of teachers...",
-        "roblox is cringe",
-        "ipads suck",
-        "minecraft movie is mid",
-        "laptops are better then ipads",
-        "Made by Chattyice",
-        "every time you press ctrl + shift + q + q you get $100",
-        "splash message",
-        "I had a really cool/funny one but I forgot. sorry :(",
-        "Changing your passwords...",
-        "ᕙ(⇀‸↼‶)ᕗ",
-        "(・o・)",
-        "¯\_( ͡° ͜ʖ ͡°)_/¯",
-        "(╯°□°）╯︵ ┻━┻",
-        "(╯ರ ~ ರ)╯︵ ┻━┻",
-        "(ノಥ,_｣ಥ)ノ彡┻━┻",
-        "That's my class",
-        "Wh- Where's the school bus?",
-        "I got caught again",
-        "stop skidding my site 😤",
-        "choochoo",
-        "what was your score?",
-        "'Mark *********, please report to the office.' Aw, what ah do now?",
-        "This is insane guys",
-        "It looks easier than it looks",
-        "chromebooks are trash",
-        "bros getting 30 fps",
-        "i woke up in a new bugatti",
-        "goguardian is not my guardian",
-        { type: "image", src: 'https://d31sxl6qgne2yj.cloudfront.net/wordpress/wp-content/uploads/20190121140627/Minecraft-Creeper-Head.jpg' },
-        { type: "image", src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvkWYA2wiktf23Fz20KoF8W7ZH35EoOFT-fQ&s' },
-        { type: "image", src: 'https://i.imgur.com/bxcvkh5.jpeg' },
-      ];
-
-      var randomIndex = Math.floor(Math.random() * phrases.length);
-     var randomPhrase = phrases[randomIndex];
-     var phraseElement = document.getElementById("randomPhrase");
-     phraseElement.textContent = randomPhrase;
-     if (randomPhrase.type === "image") {
-     phraseElement.innerHTML = `<img src="${randomPhrase.src}" alt="Splash Image" style="max-width: 30%;">`;
-     }
-     function changeText() {
-     const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-     if (typeof randomPhrase === "string") {
-     phraseElement.textContent = randomPhrase;
-     } else if (randomPhrase.type === "image") {
-     phraseElement.innerHTML = `<img src="${randomPhrase.src}" alt="Splash Image" style="max-width: 30%;">`;
-        }
-     }
-     phraseElement.addEventListener('click', changeText);
-     });
-
     function search_button() {
 	let input = document.getElementById('searchbar').value
 	input=input.toLowerCase();
@@ -242,6 +168,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var games = [
             { name: "Pandemonium Minigame", url: "https://redtide-stack.github.io/Pandemonium-Minigame-fork/" },
             { name: "Block Fist Games", url: "https://blockfistgames2.weebly.com/" },
+            { name: "COD Zombies", url: "https://nzp.*****" },
             { name: "Eaglercraft 1.12 (REAL)", url: "https://eaglercraft.com/mc/1.12.2-wasm/" },
             { name: "EaglyMC (Minecraft)", url: "https://eaglymc.com/" },
             { name: "Minecraft (1.5)", url: "https://sd592g.github.io/zj684od4lfg/" },
@@ -252,8 +179,10 @@ document.addEventListener("DOMContentLoaded", function() {
             { name: "Resent Client Eagler (1.8)", url: "https://reslauncher4.vercel.app" },
             { name: "Starlike Client Eagler (1.16)", url: "https://starlike.zumbiepig.dev/" },
             { name: "Eaglercraft (1.20)", url: "https://dfs3rzq44v6as.cloudfront.net/?frame=fullscreen/#/lessons/964c4358-60a7-4121-908e-63f6ae6e5ef0" },
+            { name: "Paper Minecraft", url: "https://obsidianig.com/games/paperminecraft/index.html" },
             { name: "Roblox (Easyfun.gg)", url: "https://www.easyfun.gg/games/roblox.html" },
             { name: "Roblox (Now.gg)", url: "https://pathetic-roblox-main.vercel.app/" },
+            { name: "Sketchbook 0.4", url: "https://roblox-unblock.github.io/r8/sketchbook-04/" },
             { name: "Tortilla Games", url: "https://dfs3rzq44v6as.cloudfront.net"},
             { name: "Ultraviolet", url: "https://dfs3rzq44v6as.cloudfront.net/#/prxy" },
             { name: "Five Nights At Winston's", url: "https://g.deev.is/fnaw" },
@@ -304,6 +233,8 @@ document.addEventListener("DOMContentLoaded", function() {
             { name: "Backrooms", url: "https://adfree3kh0.github.io/projects/backrooms/index.html" },
             { name: "Impossible Quiz", url: "https://adfree3kh0.github.io/projects/impossiblequiz/index.html" },
             { name: "Among Us Singleplayer", url: "https://adfree3kh0.github.io/projects/among-us/index.html" }, 
+            { name: "A Dance Of Fire And Ice", url: "https://roblox-unblock.github.io/r8/a-dance-of-fire-and-ice/" },
+            { name: "Angry Birds Chrome", url: "https://gaming-escape.github.io/public/assets/games/angry-birds/" },
             { name: "Bad Piggies", url: "https://www.friv.cm/bad-piggies/fullscreen/" },
             { name: "Cluster Rush",  url: "https://duckmath.org/g4m3s/cluster-rush.html" },
             { name: "Crossy Road", url: "https://selenite.cc/semag/crossyroad/index.html" },
@@ -319,13 +250,14 @@ document.addEventListener("DOMContentLoaded", function() {
             { name: "Scrap Metal 5", url: "https://www.gamearter.com/game/scrap-metal-5/" },
             { name: "Scrap Metal 6", url: "https://www.gamearter.com/game/scrap-metal-6/" },
             { name: "GameArter", url: "https://www.gamearter.com/games" },
-            { name: "Geometry Dash Lite", url: "https://selenite.cc/semag/gdlite/index.html" },
+            { name: "Geometry Dash Lite", url: "https://gaming-escape.github.io/public/assets/games/geometry-dash/" },
+            { name: "OvO", url: "https://gaming-escape.github.io/public/assets/games/ovo/" },
+            { name: "Basket Random", url: "https://roblox-unblock.github.io/r8/basket-random/" },
             { name: "FNAF 2", url: "https://selenite.cc/semag/fnaf2/index.html" },
             { name: "FNAF 3", url: "https://selenite.cc/semag/fnaf3/index.html" },
             { name: "FNAF 4", url: "https://selenite.cc/semag/fnaf4/index.html" },
             { name: "LittleBigSnake", url: "https://littlebigsnake.com" },
             { name: "Surviv.io", url: "https://surviv.io" },
-            { name: "Spacebar Clicker", url: "https://unblocked-games.s3.amazonaws.com/spacebar-clicker.html" },
             { name: "Deadshot.io", url: "https://deadshot.io" },
             { name: "Clicker", url: "https://elucidation.github.io/ClickerJs/" },
             { name: "Smashkarts.io", url: "https://smashkarts.io" },
@@ -360,9 +292,9 @@ document.addEventListener("DOMContentLoaded", function() {
             { name: "Yurk.com", url: "https://yurk.com" },
             { name: "Bottle Flip 3D", url: "https://d3rtzzzsiu7gdr.cloudfront.net/play/index.html?Bottle%20Flip%203D" },
             { name: "Friv.com", url: "https://friv.com" },
+            { name: "Friday Night Funkin (FNF)", url: "https://roblox-unblock.github.io/r88/friday-night-funkin/" },
             { name: "Slither.io Ripoff", url: "https://gulper.io/" },
             { name: "Infinite Craft", url: "https://infinite-craft.com/infinite-craft/" },
-            { name: "Baldis Basics Method 2", url: "https://igroutka.ru/loader/game/26471/" },
             { name: "We Become what we Behold", url: "https://gnhustgames.github.io/wbwwb/" },
             { name: "Time Shooter", url: "https://games.crazygames.com/en_US/time-shooter/index.html" },
             { name: "Time Shooter 2", url: "https://games.crazygames.com/en_US/time-shooter-2/index.html" },
@@ -385,6 +317,7 @@ document.addEventListener("DOMContentLoaded", function() {
             { name: "Rocket Bot Royale", url: "https://rocketbotroyale2.winterpixel.io" },
             { name: "Retro Bowl", url: "https://ethonion10.neocities.org/" },
             { name: "Soundboard", url: "https://sprintingsnail69.github.io/coolsounds/" },
+            { name: "Snow Rider 3D", url: "https://gaming-escape.github.io/public/assets/games/snow-rider-3d/index.html" },
             { name: "Shell Shockers", url: "https://shellshock.io/" },
             { name: "Moto X3M", url: "https://ubg365.github.io/moto-x3m/play.html" },
             { name: "Moto X3M 2", url: "https://slope-game.github.io/newgame/motox3m-2/" },
@@ -413,7 +346,6 @@ document.addEventListener("DOMContentLoaded", function() {
             { name: "Sonic 4: Episode 1", url: "https://wamwoowam.co.uk/sonic4/" }, 
             { name: "WebVM", url: "https://webvm.io/" },  
             { name: "Evoworld.io", url: "https://evoworld.io/" },
-            { name: "Links123 Games", url: "https://ricardomariosonic123.github.io/Links123-V3" },
             { name: "Block Blast", url: "https://blockblastonline.com" },
             { name: "Masked Forces Unlimited", url: "https://maskedforcesunlimited.github.io/" },
             { name: "Bad Time Simulator", url: "https://badtimesimulator.io" },    
@@ -482,14 +414,16 @@ document.getElementById("launchApps").onclick = function() {
         document.body.innerHTML = "";
         document.body.innerHTML = "<input id='searchbar' onkeyup='search_button()' type='text' name='search' placeholder='Search Apps 🔍'>";
         var apps = [
-            { name: "Virtual Machine", url: "https://chattyice234.github.io/ChattyVM/" },
+            { name: "Virtual Machine", url: "https://chattyice234.github.io/cvm/" },
             { name: "Virtual Machine (3 min. Free Trial)", url: "https://www.browserling.com/virtual-browser" },
             { name: "Virtual Machines", url: "https://copy.sh/v86/" },
+            { name: "Links123 Games", url: "https://ricardomariosonic123.github.io/Links123-V3" },
             { name: "Dinguschan's Github Search", url: "https://github-repository-search-two.vercel.app/" },
             { name: "DingusProxy", url: "https://dinguschan-owo.github.io/dingusproxy" },
             { name: "Helios Browser", url: "https://helios-browser.vercel.app" },
             { name: "ByeBlocker", url: "https://chic-kashata-e4cec3.netlify.app/" },
             { name: "Blobwifi", url: "https://blobby-boi.github.io/Blobwifi/" },
+            { name: "Rammerhead", url: "https://code.edu.hse.tw/" },
             { name: "Interstellar", url: "https://hiyu19.easterndns.com/" },
             { name: "Jordan's Math Work", url: "https://jmathw.laviewddns.com/" },
             { name: "Dinguschan's Blocking Extension Checker", url: "https://installed-blocking-extension-checker.vercel.app/" },
@@ -497,7 +431,7 @@ document.getElementById("launchApps").onclick = function() {
             { name: "DeepAI", url: "https://deepai.org/" },
             { name: "Appetize.io Android Phone", url: "https://appetize.io/embed/xc1w6f1krd589zhp22a0mgftyw?autoplay=false&debug=true&device=pixel4&embed=true&launchUrl=exp%3A%2F%2Fexp.host%2F%40snack%2Fsdk.46.0.0-ghV0%21Qgb8N&scale=65&screenOnly=false&xDocMsg=true&xdocMsg=true&params=%7B&osVersion=11.0&deviceColor=black" },
             { name: "List of Exploits", url: "https://cocalc.com/github/3kh0/ext-remover/blob/main/README.md" },
-             { name: "History Flooder", url: "https://spritzerland.github.io/chbook/" },
+            { name: "History Flooder", url: "https://spritzerland.github.io/chbook/" },
             { name: "Gauth Math Helper", url: "https://gauthmath.com" },
             { name: "PopAI", url: "https://popai.pro/" },
             { name: "Calculator", url: "https://desmos.com/scientific" },
@@ -546,5 +480,244 @@ document.getElementById("launchApps").onclick = function() {
 };
 
 document.getElementById("chat").onclick = function() {
-  document.body.innerHTML = '<object id="chatFrame" type="text/html" data="https://chattyice234.github.io/online-chatroom/" style="width: 100%; height: 100vh;"></object>';
+  document.body.innerHTML = '<object id="chatFrame" type="text/html" data="https://chattyice234.github.io/online-chatroom" style="width: 100%; height: 100vh;"></object>';
 };
+
+document.getElementById("req").onclick = function() {
+  document.body.innerHTML = '<object id="chatFrame" type="text/html" data="https://docs.google.com/forms/d/e/1FAIpQLSfCb0QQSV7CBuKcW1NogIWSOLSrkpwDxmu7MqhXWHJcdoKSQg/viewform?embedded=true" style="width: 100%; height: 100vh;"></object>';
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+      var phrases = [
+        "Chatty changed these lol",
+        "Maybe this will update... or not",
+        "Waiter, can I have a cheeseburger without cheese? -Oh, so you want a hamburger? No, I want a cheeseburger without cheese. -That's a hamburger. No it's not! I said I wanted a cheeseburger without cheese, so give me a cheeseburger without cheese! -One hamburger, coming riiight up. I said a cheeseburger without cheese!",
+        "Play Eaglercraft 1.12",
+        "chicken jockey",
+        "tralalero tralala",
+        "Play Blackjack Casino",
+        "'Youre naaasty' -Favian 2025",
+        "'How do I kill the creaking in minecraft? When I hit it, it just sprays dandruffs everywhere.' -Avitesh 2025",
+        "Frickelty frackelty, towards your computer approaches a tragedy! (its 30 tabs)",
+        "'Lock in' - Mr. B",
+        "MINIGAMES!",
+        "mfw ive been caught cheating on tests 10 times, used ai for every school essay, and get an F on everything: :D",
+        "huh",
+        "not",
+        "You're so COOL!",
+        "Snuck some gum into class 😎",
+        "I'll be needing extra baking soda. And soda. A lot of soda.",
+        "I caught you sitting for too long. Do 25 push-ups NOW!",
+        "forgot my charger",
+        "im at 20%",
+        "OfficialBarneyPlayz is cool",
+        "if someone snitches on this again istg",
+        "This webpage has been blocked with sheer determination!",
+        "School really tried 💀",
+        ":3",
+        "Make sure you tab cloak",
+        "I AM NOT A FRIDGE!",
+        "I like crocodiles",
+        "Am I suspicious?",
+        "Am I deemed to be sus?",
+        "NTCatGamer is really brainrot",
+        "gemini sucks",
+        "ibeatkids.com",
+        "For this experiment, we'll be needing lots of teachers...",
+        "roblox is cringe",
+        "ipads suck",
+        "minecraft movie is mid",
+        "laptops are better then ipads",
+        "Made by Chattyice",
+        "every time you press ctrl + shift + q + q you get $100",
+        "splash message",
+        "I had a really cool/funny one but I forgot. sorry :(",
+        "Changing your passwords...",
+        "ᕙ(⇀‸↼‶)ᕗ",
+        "(・o・)",
+        "¯\_( ͡° ͜ʖ ͡°)_/¯",
+        "(╯°□°）╯︵ ┻━┻",
+        "(╯ರ ~ ರ)╯︵ ┻━┻",
+        "(ノಥ,_｣ಥ)ノ彡┻━┻",
+        "That's my class",
+        "Wh- Where's the school bus?",
+        "I got caught again",
+        "stop skidding my site 😤",
+        "choochoo",
+        "what was your score?",
+        "'Mark *********, please report to the office.' Aw, what ah do now?",
+        "This is insane guys",
+        "It looks easier than it looks",
+        "chromebooks are trash",
+        "bros getting 30 fps",
+        "i woke up in a new bugatti",
+        "goguardian is not my guardian",
+        "Mind your manners!",
+        "I have a question. I have an answer.",
+        "penguins are nice",
+        "Made with love, not AI.",
+        "You got minigames on your phone?",
+        "THE_Musicmanaz - Good Luck",
+        "Beep, boop. I, Am, A, Robot.",
+        "Minecraft 1.21 free download -->",
+        "💀",
+        "🐷",
+        "I can code",
+        "We used to be determined humans by the ability to express emotions. Now it's determined by whether or not we can select the correct squares that contain motorcycles in them on a glowing, pixelated rectangle.",
+        "Fancy!",
+        "imagine not spending 10 hours working on a game website",
+        "At the very least, we feature 1000 bugs on this site for you to enjoy.",
+        "This isn't just a website, it's a free ticket to the principal's office",
+        "I skid from everyone. Including myself.",
+        "i spent 20 whole minutes writing 10 of these what am i doing",
+        "does anyone actually call twitter X",
+        "fun fact: your search history is being monitored by the second",
+        "downloading your search history...",
+        "What's your Slope high score?",
+        "if you read this plz add Minecraft Roblox Fortnite or you not sigma 🙏🙏🙏",
+        "So many games to choose from, where will you start? Google Classroom.",
+        "share with your friends and everyone and the mars rover also dont forget the aliens",
+        "You're so not sigma teacher. Math teacher: I'm not sigma. I'm... Delta.",
+        "Error 404: Password download failed.",
+        "Activate ChattyWebsite | Go to settings to activate ChattyWebsite",
+        "We're the one quirk in your life you never needed.",
+        "We're not just a website, we're singlehandedly ruining your search history.",
+        "Before ChattyWebsite: A+ After ChattyWebsite: See me after class.",
+        "Don't let this ruin your schoolwork",
+        "I hate google search results",
+        "Febreeze, lalalalala",
+        "ChattyWebsite",
+        "Guys... where's my pencil?",
+        "This isn't handwriting. This is fine pixelwork fresh from the factory.",
+        "Your coordinates have been located. In approximately 30 seconds Chattyice is there.",
+        "god is coming",
+        "Now with COD Zombies",
+        "Who else has 100 minecraft worlds? No? Just me...?",
+        "You just won $500! In Monopoly money!",
+        "We love eaglercraft",
+        "Thanks to whoever invented proxies",
+        "@everyone Your safety is our top priority.",
+        "If you can eat it, don't call it meat in 2025. Call it beef.",
+        "does anyone actually play among us in 2025",
+        "I-Tickle-Fat-Kids expanded my bookmarks with proxies",
+        "I-Tickle-Fat-Kids is cool",
+        "plaxer is cool",
+        "Bruh, I don't even understand what's happening, I think a doors entity might be attacking us.",
+        "There were no scan lines",
+        "italian brainrot sucks",
+        "Me trying to resist the urge not to swear in the site every 10 seconds",
+        "WHY AM I DRAWING EGGS?",
+        "Yo mark, is minigames sus?",
+        "Beyond your viewport size.",
+        "What's deodorant?",
+        "When was the last time you showered?",
+        "Pressing reload + power button deletes every blocker",
+        "Rabbit",
+        "Minecraft Moog City 2 Theme",
+        "Tab cloak me!",
+        "Chattyice mod",
+        "No being ***** I-Tickle-Fat-Kids",
+        "proof im not fake DIOS ES BUENO TODO EL TIEMPO♰",
+        "With a panic key",
+        "Super Sigma Settings",
+        "Press the ] key",
+        { type: "image", src: 'https://d31sxl6qgne2yj.cloudfront.net/wordpress/wp-content/uploads/20190121140627/Minecraft-Creeper-Head.jpg' },
+        { type: "image", src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvkWYA2wiktf23Fz20KoF8W7ZH35EoOFT-fQ&s' },
+        { type: "image", src: 'https://i.imgur.com/bxcvkh5.jpeg' },
+      ];
+
+      var randomIndex = Math.floor(Math.random() * phrases.length);
+     var randomPhrase = phrases[randomIndex];
+     var phraseElement = document.getElementById("randomPhrase");
+     phraseElement.textContent = randomPhrase;
+     if (randomPhrase.type === "image") {
+     phraseElement.innerHTML = `<img src="${randomPhrase.src}" alt="Splash Image" style="max-width: 30%;">`;
+     }
+     function changeText() {
+     const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+     if (typeof randomPhrase === "string") {
+     phraseElement.textContent = randomPhrase;
+     } else if (randomPhrase.type === "image") {
+     phraseElement.innerHTML = `<img src="${randomPhrase.src}" alt="Splash Image" style="max-width: 30%;">`;
+        }
+     }
+     phraseElement.addEventListener('click', changeText);
+     });
+     
+     // Panic Key functionality
+        let panicKey = localStorage.getItem('panicKey') || ']';
+        let panicURL = localStorage.getItem('panicURL') || 'https://google.com';
+        let panicKeyActive = true;
+        
+        // Initialize panic key elements
+        document.getElementById('current-panic-key').textContent = panicKey;
+        document.getElementById('panic-url').value = panicURL;
+        
+        // Change Panic Key button
+        const changePanicKeyBtn = document.getElementById('change-panic-key-btn');
+        const listeningStatus = document.getElementById('listening-status');
+        
+        changePanicKeyBtn.addEventListener('click', function() {
+            listeningStatus.textContent = "Listening for key press...";
+            
+            // Listen for the next key press
+            const keyListener = function(e) {
+                panicKey = e.key;
+                document.getElementById('current-panic-key').textContent = panicKey;
+                listeningStatus.textContent = "Key set successfully!";
+                
+                // Remove the listener after capturing a key
+                document.removeEventListener('keydown', keyListener);
+                
+                // Clear the status message after 2 seconds
+                setTimeout(() => {
+                    listeningStatus.textContent = "";
+                }, 2000);
+            };
+            
+            document.addEventListener('keydown', keyListener);
+        });
+        
+        // Save panic settings
+        function savePanicSettings() {
+            panicURL = document.getElementById('panic-url').value;
+            
+            // Ensure URL has http:// or https:// prefix
+            if (panicURL && !panicURL.startsWith('http://') && !panicURL.startsWith('https://')) {
+                panicURL = 'https://' + panicURL;
+                document.getElementById('panic-url').value = panicURL;
+            }
+            
+            // Save settings to localStorage
+            localStorage.setItem('panicKey', panicKey);
+            localStorage.setItem('panicURL', panicURL);
+            
+            // Show saved confirmation
+            const panicStatus = document.getElementById('panic-status');
+            panicStatus.textContent = "Settings saved successfully!";
+            
+            // Update status message after 2 seconds
+            setTimeout(() => {
+                panicStatus.textContent = "Panic key is active";
+            }, 2000);
+        }
+        
+        // Global keydown listener for the panic key
+        document.addEventListener('keydown', function(e) {
+            if (panicKeyActive && e.key === panicKey) {
+                window.location.href = panicURL;
+            }
+        });
+        
+        // Initialize the panic settings on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('panicKey')) {
+                panicKey = localStorage.getItem('panicKey');
+                document.getElementById('current-panic-key').textContent = panicKey;
+            }
+            
+            if (localStorage.getItem('panicURL')) {
+                panicURL = localStorage.getItem('panicURL');
+                document.getElementById('panic-url').value = panicURL;
+            }
+        });
