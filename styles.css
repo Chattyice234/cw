@@ -15,10 +15,10 @@
         #settings {
              overflow: auto;
              position: absolute;
-        	 left: 50%;
-        	 top: 50%;
-        	 transform: translate(-50%, -50%);
-             background-color: #111111;
+          	 left: 50%;
+          	 top: 50%;
+          	 transform: translate(-50%, -50%);
+             background-color: #00011A;
              height: 70%;
              width: 70%;
              border-radius: 10px;
@@ -30,9 +30,9 @@
              margin-right: 5px;
              font-family: Varela Round, Arial, sans-serif;
              font-size: 15px;
-        	 width: 30%;
+          	 width: 30%;
              height: 40px;
-        	 border-radius: 6px;
+          	 border-radius: 6px;
              border: 0;
              font-weight: bold;
              text-align: center;
@@ -52,6 +52,12 @@
          width: 40%;
          cursor: text;
          }
+         
+         
+        .header {
+           border-bottom: 5px solid #00008B;
+           padding-bottom: 20px;
+         }
      
         body {
             margin: 0;
@@ -65,7 +71,19 @@
             font-family: Varela Round, Trebuchet MS, Arial;
             text-align: center;
         }
-
+        
+        #updlog {
+         overflow: auto;
+         position: absolute;
+      	 left: 50%;
+      	 top: 50%;
+      	 transform: translate(-50%, -50%);
+         background-color: #00011A;
+         height: 70%;
+         width: 50%;
+         border-radius: 10px;
+         }
+        
         #searchbar{ /* Credits to https://github.com/RicardoMarioSonic123 */
             font-family: Raleway, Arial;
             font-size: 15px;
@@ -123,14 +141,24 @@
 
         h3 {
             font-family: 'Varela Round';
+            margin-bottom: 0px;
         }
         
         h7 {
             font-family: 'Varela Round';
             font-size: 50px;
         }
-
+        
         h2 {
+          font-family: 'Varela Round';
+        }
+        
+        .updh2 {
+          font-family: 'Varela Round';
+          font-size: 20px;
+        }
+
+        .sh2 {
             font-family: 'Varela Round';
             background: linear-gradient(#00FFFFFF,rgb(41, 177, 189),rgb(46, 91, 213));
             box-shadow: 0 0 0 2px #00316E, 0 0 0 4px #2234A8, 0 0 0 6px #00008C;
@@ -198,6 +226,25 @@
             /* Initial shadow effect */
         }
         
+        #button-updlog {
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 2px;
+            margin-right: 2px;
+            padding: 10px 20px;
+            background-color: #00008B;
+            color: #00FFFF;
+            border: 2px solid #00ff;
+            border-radius: 12px; /* Create rounded rectangle edges */
+            font-weight: 700;
+            font-family: Raleway; /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
+            cursor: pointer;
+            transition: all 0.3s ease;
+            /* Smooth transition for the glow effect */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            /* Initial shadow effect */
+        }
+        
         #button-s { 
             bottom: 0%; 
             right: 0%;
@@ -226,6 +273,32 @@
         
         #button-g { 
             bottom: 0%; 
+            left: 0%;
+            width: 150px;
+            height: 40px;
+            position: absolute;
+            z-index: 2; 
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 2px;
+            margin-right: 2px;
+            padding: 10px 20px;
+            background-color: #00008B;
+            color: #00FFFF;
+            border: 2px solid #00ff;
+            border-radius: 12px; /* Create rounded edges */
+            font-weight: 700;
+            font-family: Raleway;
+            /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
+            cursor: pointer;
+            transition: all 0.3s ease;
+            /* Smooth transition for the glow effect */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            /* Initial shadow effect */
+        }
+
+        .button-req { 
+            top: 0%; 
             left: 0%;
             width: 150px;
             height: 40px;
@@ -401,6 +474,36 @@
             border: 2px solid #121c7b;
         }
         
+        #button-updlog:hover {
+            background-color: #4169E1;
+            color: #00FFFF;
+            box-shadow: 0 0 15px rgb(17, 27, 215),
+                /* Glow effect */
+                0 0 30px rgba(255, 255, 255, 0.8);
+            /* More intense glow effect */
+        }
+        
+        #button-updlog:active {
+            background-color: #23278d;
+            color: #549ea0;
+            border: 2px solid #121c7b;
+        }
+
+        .button-req:hover {
+            background-color: #4169E1;
+            color: #00FFFF;
+            box-shadow: 0 0 15px rgb(17, 27, 215),
+                /* Glow effect */
+                0 0 30px rgba(255, 255, 255, 0.8);
+            /* More intense glow effect */
+        }
+        
+        .button-req:active {
+            background-color: #23278d;
+            color: #549ea0;
+            border: 2px solid #121c7b;
+        }
+        
         #button-sg:hover {
             background-color: #4169E1;
             color: #00FFFF;
@@ -462,16 +565,17 @@
         }
 
         #updlog {
-            color:blue; 
-            margin-top: 15px;
-            top: 100%;
-            /*background-color: #00004b;*/
-            background : linear-gradient(#00004d,#1c2e4a,#192841);
-            border: 2px solid #000;
-            border-radius: 10px;
-            width: 60%;
-            margin: auto;
-        }
+         overflow: auto;
+         position: absolute;
+      	 left: 50%;
+      	 top: 50%;
+      	 transform: translate(-50%, -50%);
+         background-color: #00011A;
+         height: 70%;
+         width: 50%;
+         border-radius: 10px;
+         border: 2px solid #00008B;
+         }
         
         #randomPhrase {
             font-family: 'Varela Round';
@@ -555,4 +659,17 @@
                 left: 100%;
                 /* Ending position off the right */
             }
+        }
+        .panic-status {
+            display: inline-block;
+            font-style: italic;
+            margin-left: 10px;
+            color: #00ff00;
+        }
+        .key-display {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 0 5px;
         }
