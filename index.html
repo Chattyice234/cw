@@ -11,10 +11,7 @@
 </head>
 <body>
     <!-- Main Menu -->
-    <div id="updlog">
-        <h3>Update 1.0.1 - 4/21/25</h3>
-        <h4 style="color: paleturquoise;">Fixed a bunch of bugs</h4>
-    </div>
+    <button id="button-updlog" onclick="openUpdateLog()" title="Click here to view the update log">View Changelog - Version 1.0.4</button>
         
     <h1>~*{ 🌆 ChattyWebsite 🌆 }*~</h1>
     
@@ -38,29 +35,39 @@
     <div id="randomPhrase"></div>
      <button id="button-s" onclick="openSettings()">Settings
      </button>
-     <button id="button-g" onclick="location.href='https://github.com/Chattyice234/british-cw'">Github
+     <button id="button-g" onclick="location.href='https://github.com/Chattyice234/cw'">Github
          <span class="button__icon">
              <ion-icon name="logo-github"></ion-icon>
          </span>
      </button>
-    <h2 style="color: paleturquoise;">ChattyWebsite Announcements
+     <button id="req" class="button-req">Suggestions</button>
+    <h2 style="color: paleturquoise;" class="sh2">ChattyWebsite Announcements
         <span class="button__icon">
             <ion-icon name="megaphone-outline"></ion-icon>
         </span>
     </h2>
-    <h4 style="color: paleturquoise;">I can never stand to a promise so I'll keep working on this trashpile!</h4>
+    <h4 style="color: paleturquoise;">ChattyWebsite is back for the third time!</h4>
     <br>
     </div>
     
-    
+    <!-- Changelogs --> 
+     <div id="updlog" class= "hidden">
+     <button class="button-c" onclick="closeUpdateLog();" title="Close Update log">×</button>
+     <div class="header">
+     <h3 style="font-size: 50px; font-family: Varela Round, sans-serif; color: #3d88ff; margin-bottom: 0px;">Update 1.0.4: 5/7/25</h3>
+     </div>
+     <h2 class="updh2"><li>Added a Panic Key to the settings, press the set panic key or set your own to redirect to a site when you press the key if someone is approaching</li><li>Fixed a few links</li></h2>
+     </div>
+
     <!-- Settings -->
      <div id="settings" style="display: none">
      <h3 style="font-size: 50px; font-family: Varela Round, Arial, sans-serif; margin: 0; margin-top: 10px; cursor: default;">Settings
      </h3>
      <button class="button-c" onclick="closeSettings()" title="Close Settings">×</button>
-     <button class="button-st" id="aboutBlank" title="Open in about:blank">about:blank
-     </button>
+     <button class="button-st" id="aboutBlank" title="Open in about:blank">about:blank</button>
      <br>
+     <br>
+     <h3>Custom Tab Cloak</h3>
      <input type="text" id="tabName" placeholder="Enter new tab name" class="settings-i">
      <button class="button-sc" onclick="changeTabName()" title="Save changes">Save
          <span class="button__icon">
@@ -76,6 +83,8 @@
      </button>
      <br>
      <br>
+     <h3>Tab Cloaks</h3>
+     <br>
      <button id="ChattyWebsite" class="favicon"><img src="https://i.imgur.com/PQhhSgy.png" alt="ChattyWebsite" title="ChattyWebsite"></button>
      <button id="Google" class="favicon"><img src="https://www.google.com/favicon.ico" alt="Google" title="Google"></button>
      <button id="Google Drive" class="favicon"><img src="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png" alt="Google Drive" title="Google Drive"></button>
@@ -83,6 +92,20 @@
      <button id="Google Slides" class="favicon"><img src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_presentation_x64.png" alt="" title=""></button>
      <button id="Google Classroom" class="favicon"><img src="https://cdn.worldvectorlogo.com/logos/google-classroom.svg" alt="Google Classroom" title="Google Classroom"></button>
      <button id="Gmail" class="favicon"><img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="Gmail" title="Gmail"></button>
+     <br>
+     <br>
+     <h3>Panic Key</h3>
+     <h4>Select a key to press to quickly redirect to an educational site when someone (teacher, etc.) is approaching. You can also select a custom site to redirect to. Make sure this panic key is something you rarely press so you do not accidentally end up pressing it.</h4>
+     <span>Current Panic Key: </span>
+      <span id="current-panic-key" class="key-display">]</span>
+      <button id="change-panic-key-btn" class="button">Change Key</button>
+      <span id="listening-status" class="panic-status"></span>
+      <br>
+      <span>Redirect URL: </span>
+      <input type="text" id="panic-url" class="settings-i" placeholder="Enter URL (e.g., https://google.com)" value="https://google.com">
+      <button onclick="savePanicSettings()" class="button">Save Settings</button>
+      <br><br>
+      <span id="panic-status" class="panic-status">Panic key is active</span>
      </div>
      </div>
     <script src="scripts.js"></script>
