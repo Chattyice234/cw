@@ -193,6 +193,12 @@ document.getElementById("Google").onclick = function() {
             { name: "Slope", url: "https://mathadventure1.github.io/slope/slope/index.html" },
             { name: "Slope 2", url: "https://d3rtzzzsiu7gdr.cloudfront.net/gameplayer/index.html?Slope%202" },
             { name: "Slope 3", url: "https://slope3.com/" },
+            { name: "Bloons Tower Defense", url: "https://lite.3kh0.net/projects/bloonstd/" },
+            { name: "Bloons Tower Defense 2", url: "https://1kh0.github.io/projects/bloonstd2/index.html" },
+            { name: "Bloons Tower Defense 3", url: "https://selenite.laviewddns.com/semag/btd3/index.html" },
+            { name: "Bloons Tower Defense 4", url: "https://selenite.laviewddns.com/semag/btd4/index.html" },
+            { name: "Bloons Tower Defense 5", url: "https://selenite.laviewddns.com/semag/btd5/index.html" },
+            { name: "Bloons Tower Defense 6", url: "https://selenite.laviewddns.com/semag/btd6/index.html" },
             { name: "Cookie Clicker", url: "https://eli-schwartz.github.io/cookieclicker/" },
             { name: "Drive Mad", url: "https://ubg365.github.io/drive-mad/play.html" },
             { name: "Drive Mad (Server 2)", url: "https://d272xss3wq00xu.cloudfront.net/drivemad/index.html" },
@@ -352,7 +358,7 @@ document.getElementById("Google").onclick = function() {
             { name: "I Beat Kids", url: "https://ibeatkids.com" }, 
             { name: "N-Gon Enhanced", url: "https://n-gon-enhanced.vercel.app/" },
             { name: "Chattyicesmathwork", url: "https://chattyicesmathwork.neocities.org/" },
-      
+            { name: "Thirty Dollar Website", url: "https://thirtydollar.website" },
 
         ];
         var container = document.createElement("div");
@@ -481,10 +487,6 @@ document.getElementById("launchApps").onclick = function() {
 
 document.getElementById("chat").onclick = function() {
   document.body.innerHTML = '<object id="chatFrame" type="text/html" data="https://chattyice234.github.io/online-chatroom" style="width: 100%; height: 100vh;"></object>';
-};
-
-document.getElementById("req").onclick = function() {
-  document.body.innerHTML = '<object id="chatFrame" type="text/html" data="https://docs.google.com/forms/d/e/1FAIpQLSfCb0QQSV7CBuKcW1NogIWSOLSrkpwDxmu7MqhXWHJcdoKSQg/viewform?embedded=true" style="width: 100%; height: 100vh;"></object>';
 };
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -621,6 +623,15 @@ document.addEventListener("DOMContentLoaded", function() {
         "With a panic key",
         "Super Sigma Settings",
         "Press the ] key",
+        "Now it's time for everybody's faaavorite subject: math!",
+        "why tf does ntcatgamer want us to make a secret website so badly",
+        "RicardoMarioSonic123 is cool",
+        "links123 = 🔥 * ∞",
+        "Fun fact: this is a website",
+        "Oh, for the love of god.. Hey, welcome!",
+        "Thank you for using ChattyWebsite",
+        "I stole like 30 messages from Links123",
+        "Mind: Okay, we need a name for our site since we're going to be upgrading Australian Man Website. Make sure it's original and not just half of our online alias, that's just egotistica- Let's call it ChattyWebsite. Mind: Kill yourself.",
         { type: "image", src: 'https://d31sxl6qgne2yj.cloudfront.net/wordpress/wp-content/uploads/20190121140627/Minecraft-Creeper-Head.jpg' },
         { type: "image", src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvkWYA2wiktf23Fz20KoF8W7ZH35EoOFT-fQ&s' },
         { type: "image", src: 'https://i.imgur.com/bxcvkh5.jpeg' },
@@ -644,32 +655,26 @@ document.addEventListener("DOMContentLoaded", function() {
      phraseElement.addEventListener('click', changeText);
      });
      
-     // Panic Key functionality
         let panicKey = localStorage.getItem('panicKey') || ']';
         let panicURL = localStorage.getItem('panicURL') || 'https://google.com';
         let panicKeyActive = true;
         
-        // Initialize panic key elements
         document.getElementById('current-panic-key').textContent = panicKey;
         document.getElementById('panic-url').value = panicURL;
         
-        // Change Panic Key button
         const changePanicKeyBtn = document.getElementById('change-panic-key-btn');
         const listeningStatus = document.getElementById('listening-status');
         
         changePanicKeyBtn.addEventListener('click', function() {
             listeningStatus.textContent = "Listening for key press...";
             
-            // Listen for the next key press
             const keyListener = function(e) {
                 panicKey = e.key;
                 document.getElementById('current-panic-key').textContent = panicKey;
                 listeningStatus.textContent = "Key set successfully!";
                 
-                // Remove the listener after capturing a key
                 document.removeEventListener('keydown', keyListener);
                 
-                // Clear the status message after 2 seconds
                 setTimeout(() => {
                     listeningStatus.textContent = "";
                 }, 2000);
@@ -678,38 +683,31 @@ document.addEventListener("DOMContentLoaded", function() {
             document.addEventListener('keydown', keyListener);
         });
         
-        // Save panic settings
         function savePanicSettings() {
             panicURL = document.getElementById('panic-url').value;
             
-            // Ensure URL has http:// or https:// prefix
             if (panicURL && !panicURL.startsWith('http://') && !panicURL.startsWith('https://')) {
                 panicURL = 'https://' + panicURL;
                 document.getElementById('panic-url').value = panicURL;
             }
             
-            // Save settings to localStorage
             localStorage.setItem('panicKey', panicKey);
             localStorage.setItem('panicURL', panicURL);
             
-            // Show saved confirmation
             const panicStatus = document.getElementById('panic-status');
             panicStatus.textContent = "Settings saved successfully!";
             
-            // Update status message after 2 seconds
             setTimeout(() => {
                 panicStatus.textContent = "Panic key is active";
             }, 2000);
         }
         
-        // Global keydown listener for the panic key
         document.addEventListener('keydown', function(e) {
             if (panicKeyActive && e.key === panicKey) {
                 window.location.href = panicURL;
             }
         });
         
-        // Initialize the panic settings on page load
         document.addEventListener('DOMContentLoaded', function() {
             if (localStorage.getItem('panicKey')) {
                 panicKey = localStorage.getItem('panicKey');
@@ -721,3 +719,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById('panic-url').value = panicURL;
             }
         });
+
+document.getElementById("req").onclick = function() {
+    document.body.innerHTML = '<object id="chatFrame" type="text/html" data="https://docs.google.com/forms/d/e/1FAIpQLSfCb0QQSV7CBuKcW1NogIWSOLSrkpwDxmu7MqhXWHJcdoKSQg/viewform?embedded=true" style="width: 100%; height: 100vh;"></object>';
+};
+document.getElementById("prxy").onclick = function() {
+  document.body.innerHTML = '<object id="prxyFrame" type="text/html" data="https://chattyice234.github.io/cwp/" style="width: 100%; height: 100vh;"></object>';
+};
