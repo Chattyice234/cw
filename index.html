@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- Main Menu -->
-    <button id="button-updlog" onclick="openUpdateLog()" title="Click here to view the update log">View Changelog - Version 1.0.4</button>
+    <button id="button-updlog" onclick="openUpdateLog()" title="Click here to view the update log">View Changelog - Version 1.0.5</button>
         
     <h1>~*{ 🌆 ChattyWebsite 🌆 }*~</h1>
     
@@ -32,8 +32,16 @@
             <ion-icon name="chatbox-ellipses-outline"></ion-icon>
         </span>
     </button>
+    <button id="prxy" class="button">Proxy
+        <span class="button__icon">
+            <ion-icon name="lock-open-outline"></ion-icon>
+        </span>
+    </button>
     <div id="randomPhrase"></div>
      <button id="button-s" onclick="openSettings()">Settings
+        <span class="button__icon">
+            <ion-icon name="settings-outline"></ion-icon>
+        </span>
      </button>
      <button id="button-g" onclick="location.href='https://github.com/Chattyice234/cw'">Github
          <span class="button__icon">
@@ -54,14 +62,17 @@
      <div id="updlog" class= "hidden">
      <button class="button-c" onclick="closeUpdateLog();" title="Close Update log">×</button>
      <div class="header">
-     <h3 style="font-size: 50px; font-family: Varela Round, sans-serif; color: #3d88ff; margin-bottom: 0px;">Update 1.0.4: 5/7/25</h3>
+     <h3 style="font-size: 50px; font-family: Varela Round, sans-serif; color: #3d88ff; margin-bottom: 0px;">Update 1.0.5: 5/8/25</h3>
      </div>
-     <h2 class="updh2"><li>Added a Panic Key to the settings, press the set panic key or set your own to redirect to a site when you press the key if someone is approaching</li><li>Fixed a few links</li></h2>
+     <h2 class="updh2"><li>Added a proxy</li></h2>
      </div>
 
     <!-- Settings -->
      <div id="settings" style="display: none">
      <h3 style="font-size: 50px; font-family: Varela Round, Arial, sans-serif; margin: 0; margin-top: 10px; cursor: default;">Settings
+        <span class="button__icon">
+            <ion-icon name="settings-outline"></ion-icon>
+        </span>
      </h3>
      <button class="button-c" onclick="closeSettings()" title="Close Settings">×</button>
      <button class="button-st" id="aboutBlank" title="Open in about:blank">about:blank</button>
@@ -88,8 +99,8 @@
      <button id="ChattyWebsite" class="favicon"><img src="https://i.imgur.com/PQhhSgy.png" alt="ChattyWebsite" title="ChattyWebsite"></button>
      <button id="Google" class="favicon"><img src="https://www.google.com/favicon.ico" alt="Google" title="Google"></button>
      <button id="Google Drive" class="favicon"><img src="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png" alt="Google Drive" title="Google Drive"></button>
-     <button id="Google Docs" class="favicon"><img src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_document_x64.png" alt="" title=""></button>
-     <button id="Google Slides" class="favicon"><img src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_presentation_x64.png" alt="" title=""></button>
+     <button id="Google Docs" class="favicon"><img src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_document_x64.png" alt="Google Docs" title="Google Docs"></button>
+     <button id="Google Slides" class="favicon"><img src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_presentation_x64.png" alt="Google Slides" title="Google Slides"></button>
      <button id="Google Classroom" class="favicon"><img src="https://cdn.worldvectorlogo.com/logos/google-classroom.svg" alt="Google Classroom" title="Google Classroom"></button>
      <button id="Gmail" class="favicon"><img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="Gmail" title="Gmail"></button>
      <br>
