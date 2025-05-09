@@ -216,14 +216,12 @@
             background-color: #00008B;
             color: #00FFFF;
             border: 2px solid #00ff;
-            border-radius: 12px; /* Create rounded rectangle edges */
+            border-radius: 12px;
             font-weight: 700;
-            font-family: Raleway; /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
+            font-family: Raleway;
             cursor: pointer;
-            transition: all 0.3s ease;
-            /* Smooth transition for the glow effect */
+            transition: 0.32s all ease;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            /* Initial shadow effect */
         }
         
         #button-updlog {
@@ -235,14 +233,12 @@
             background-color: #00008B;
             color: #00FFFF;
             border: 2px solid #00ff;
-            border-radius: 12px; /* Create rounded rectangle edges */
+            border-radius: 12px;
             font-weight: 700;
-            font-family: Raleway; /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
+            font-family: Raleway;
             cursor: pointer;
             transition: all 0.3s ease;
-            /* Smooth transition for the glow effect */
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            /* Initial shadow effect */
         }
         
         #button-s { 
@@ -260,15 +256,12 @@
             background-color: #00008B;
             color: #00FFFF;
             border: 2px solid #00ff;
-            border-radius: 12px; /* Create rounded edges */
+            border-radius: 12px;
             font-weight: 700;
             font-family: Raleway;
-            /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
             cursor: pointer;
             transition: all 0.3s ease;
-            /* Smooth transition for the glow effect */
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            /* Initial shadow effect */
         }
         
         #button-g { 
@@ -286,15 +279,12 @@
             background-color: #00008B;
             color: #00FFFF;
             border: 2px solid #00ff;
-            border-radius: 12px; /* Create rounded edges */
+            border-radius: 12px;
             font-weight: 700;
             font-family: Raleway;
-            /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
             cursor: pointer;
             transition: all 0.3s ease;
-            /* Smooth transition for the glow effect */
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            /* Initial shadow effect */
         }
 
         .button-req { 
@@ -312,15 +302,12 @@
             background-color: #00008B;
             color: #00FFFF;
             border: 2px solid #00ff;
-            border-radius: 12px; /* Create rounded edges */
+            border-radius: 12px;
             font-weight: 700;
             font-family: Raleway;
-            /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
             cursor: pointer;
             transition: all 0.3s ease;
-            /* Smooth transition for the glow effect */
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            /* Initial shadow effect */
         }
         
         #button-sg { 
@@ -338,31 +325,28 @@
             background-color: #00008B;
             color: #00FFFF;
             border: 2px solid #00ff;
-            border-radius: 12px; /* Create rounded edges */
+            border-radius: 12px;
             font-weight: 700;
             font-family: Raleway;
-            /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
             cursor: pointer;
             transition: all 0.3s ease;
-            /* Smooth transition for the glow effect */
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            /* Initial shadow effect */
         }
         
         .button-c {
-         position: absolute;
-         top: 0%;
-         right: 0%;
-         padding: 5px 10px;
-         font-size: 18px;
-         font-weight: 552;
-         font-family: Tahoma, sans-serif;
-         background-color: #00008b;
-         color: #fff;
-         border: none;
-         border-radius: 10px;
-         cursor: pointer;
-         transition: background-color 0.3s;
+            position: absolute;
+            top: 0%;
+            right: 0%;
+            padding: 5px 10px;
+            font-size: 18px;
+            font-weight: 552;
+            font-family: Tahoma, sans-serif;
+            background-color: #00008b;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
          }
         
         .favicon {
@@ -375,35 +359,35 @@
              background-color: #000; 
              border-radius: 10px;
              outline: none;
-         }
+        }
     
-     .favicon img {
-         width: 30px;
-         height: 30px;
-         outline: none;
-         background-color: #fff;
-         padding: 7px 8px;
-         border-radius: 10px;  
-         transition: background-color 0.3s, transform 0.3s;
-     }
+        .favicon img {
+            width: 30px;
+            height: 30px;
+            outline: none;
+            background-color: #fff;
+            padding: 7px 8px;
+            border-radius: 10px;  
+            transition: background-color 0.3s, transform 0.3s;
+        }
     
-     .favicon img:hover {
-         background-color: #cccccc;
-         transform: scale(1.05);
-     }
-    
-     .favicon img:active {
-         background-color: #999999;
-         transform: scale(0.95);
-     }
-     
-     .button-c:hover {
-         background-color: #4196e1;
-     }
-    
-     .button-c:active {
-         background-color: #23278d;
-     }
+        .favicon img:hover {
+            background-color: #cccccc;
+            transform: scale(1.05);
+        }
+        
+        .favicon img:active {
+            background-color: #999999;
+            transform: scale(0.95);
+        }
+        
+        .button-c:hover {
+            background-color: #4196e1;
+        }
+        
+        .button-c:active {
+            background-color: #23278d;
+        }
     
         
         .button-st {
@@ -541,6 +525,7 @@
                 /* Glow effect */
                 0 0 30px rgba(255, 255, 255, 0.8);
             /* More intense glow effect */
+            transform: scale(1.1);
         }
         
         #button-s:hover {
@@ -562,6 +547,7 @@
             background-color: #23278d;
             color: #549ea0;
             border: 2px solid #121c7b;
+            transform: scale(0.95);
         }
 
         #updlog {
@@ -590,8 +576,8 @@
             padding: 5px 10.0125px;
             color:rgb(32, 91, 241);
             transition: all 0.3s ease, transform 0.3s;
-            /* Smooth transition for the glow effect */
             cursor: pointer;
+            user-select: none;
         }
 
         #randomPhrase:hover {
@@ -609,7 +595,7 @@
         #randomPhrase:active{
             background-color: #23278d;
         }
-
+        
         .hidden {
             display: none;
         }
