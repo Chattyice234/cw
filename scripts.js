@@ -103,7 +103,43 @@ document.getElementById("Google").onclick = function() {
      localStorage.setItem("tabName", tabTitle);
      localStorage.setItem("tabIcon", tabIcon);
      };
-                              
+     
+let blockTabEnabled = false;
+
+document.getElementById('blockTabToggle').addEventListener('change', function () {
+    blockTabEnabled = this.checked;
+});
+
+window.addEventListener('beforeunload', function (event) {
+    if (blockTabEnabled) {
+        event.preventDefault();
+        event.returnValue = 'You have unsaved changes on the site. Are you sure you want to leave?';
+    }
+});
+
+document.getElementById('disableParticlesToggle').addEventListener('change', function () {
+    if (this.checked) {
+        document.body.style.backgroundImage = 'none';
+    } else {
+        document.body.style.backgroundImage = "url('https://64.media.tumblr.com/d60fa89a6c6ef6b51790a079d7204540/f145147b69889cf3-a3/s640x960/1d7480b51aa3c7cfc46d85641dfd9f759eeadd95.gif')";
+    }
+});
+
+// Function to set a custom background image
+function setCustomBackground() {
+    const input = document.getElementById('customBackgroundInput');
+    const imageUrl = input.value.trim();
+
+    if (imageUrl) {
+        // Set the background image to the custom URL
+        document.body.style.backgroundImage = `url('${imageUrl}')`;
+        // Clear the input field
+        input.value = '';
+    } else {
+        alert('Please enter a valid image URL.');
+    }
+}
+                        
      document.getElementById("Gmail").onclick = function() {
      var tabTitle = "Inbox (2103)";
      var tabIcon = "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico";
@@ -164,7 +200,7 @@ document.getElementById("Google").onclick = function() {
       document.body.innerHTML = "<h7>Loading...<h7>";
       setTimeout(function() {
         document.body.innerHTML = "";
-        document.body.innerHTML = "<input id='searchbar' onkeyup='search_button()' type='text' name='search' placeholder='Search Games 🔍'>"; 
+        document.body.innerHTML = "<input id='searchbar' onkeyup='search_button()' type='text' name='search' placeholder='Search Games'>"; 
         var games = [
             { name: "Pandemonium Minigame", url: "https://redtide-stack.github.io/Pandemonium-Minigame-fork/" },
             { name: "Block Fist Games", url: "https://blockfistgames2.weebly.com/" },
@@ -430,7 +466,7 @@ document.getElementById("launchApps").onclick = function() {
             { name: "ByeBlocker", url: "https://chic-kashata-e4cec3.netlify.app/" },
             { name: "Blobwifi", url: "https://blobby-boi.github.io/Blobwifi/" },
             { name: "Rammerhead", url: "https://code.edu.hse.tw/" },
-            { name: "Interstellar", url: "https://hiyu19.easterndns.com/" },
+            { name: "Interstellar", url: "https://menu.earlyrisercoffeeshop.com" },
             { name: "Jordan's Math Work", url: "https://jmathw.laviewddns.com/" },
             { name: "Dinguschan's Blocking Extension Checker", url: "https://installed-blocking-extension-checker.vercel.app/" },
             { name: "ChatGPT", url: "https://chatgptfree.ai/chat/" },
@@ -441,7 +477,6 @@ document.getElementById("launchApps").onclick = function() {
             { name: "Gauth Math Helper", url: "https://gauthmath.com" },
             { name: "PopAI", url: "https://popai.pro/" },
             { name: "Calculator", url: "https://desmos.com/scientific" },
-            { name: "SmoresXO School Tools", url: "https://smoresxo.shop/" },
             { name: "SmoresXO Proxies", url: "https://smoresxo.shop/proxies" },
             { name: "HTML Editor", url: "https://spacenerd24.github.io/Online-HTML-Viewer/" },
             { name: "Fake Windows 10", url: "https://dustinbrett.com/" },
@@ -450,7 +485,7 @@ document.getElementById("launchApps").onclick = function() {
             { name: "Windows XP Emulator", url: "https://winxp.vercel.app/" },
             { name: "AaronOS", url: "https://aaronos.dev/" },
             { name: "Windows 96", url: "https://windows96.net/" },
-            { name: "AI Image Generator", url: "https://nuelink.com/tools/ai-image-generator" },
+            { name: "AI Image Generator", url: "https://perchance.org/ai-text-to-image-generator" },
             { name: "YT to mp3", url: "https://cobalt.tools" },
             { name: "Dinguschan's URL Converter", url: "https://url-converter-opal.vercel.app/" },
             { name: "Notepad in JS", url: "https://notepad.js.org/index.html" },
@@ -562,55 +597,44 @@ document.addEventListener("DOMContentLoaded", function() {
         "THE_Musicmanaz - Good Luck",
         "Beep, boop. I, Am, A, Robot.",
         "Minecraft 1.21 free download -->",
+        "NoLongerNull - Star Of The Show",
         "💀",
         "🐷",
         "I can code",
-        "We used to be determined humans by the ability to express emotions. Now it's determined by whether or not we can select the correct squares that contain motorcycles in them on a glowing, pixelated rectangle.",
         "Fancy!",
         "imagine not spending 10 hours working on a game website",
         "At the very least, we feature 1000 bugs on this site for you to enjoy.",
         "This isn't just a website, it's a free ticket to the principal's office",
         "I skid from everyone. Including myself.",
-        "i spent 20 whole minutes writing 10 of these what am i doing",
-        "does anyone actually call twitter X",
         "fun fact: your search history is being monitored by the second",
         "downloading your search history...",
         "What's your Slope high score?",
         "if you read this plz add Minecraft Roblox Fortnite or you not sigma 🙏🙏🙏",
         "So many games to choose from, where will you start? Google Classroom.",
         "share with your friends and everyone and the mars rover also dont forget the aliens",
-        "You're so not sigma teacher. Math teacher: I'm not sigma. I'm... Delta.",
+        "Favian: You're so not sigma teacher. Math teacher: I'm not sigma. I'm... Delta.",
         "Error 404: Password download failed.",
         "Activate ChattyWebsite | Go to settings to activate ChattyWebsite",
-        "We're the one quirk in your life you never needed.",
-        "We're not just a website, we're singlehandedly ruining your search history.",
-        "Before ChattyWebsite: A+ After ChattyWebsite: See me after class.",
         "Don't let this ruin your schoolwork",
         "I hate google search results",
-        "Febreeze, lalalalala",
         "ChattyWebsite",
         "Guys... where's my pencil?",
-        "This isn't handwriting. This is fine pixelwork fresh from the factory.",
-        "Your coordinates have been located. In approximately 30 seconds Chattyice is there.",
-        "god is coming",
+        "Your coordinates have been located. In approximately 30 seconds Chattyice will be there.",
+        "god is coming 2:00",
         "Now with COD Zombies",
         "Who else has 100 minecraft worlds? No? Just me...?",
         "You just won $500! In Monopoly money!",
         "We love eaglercraft",
-        "Thanks to whoever invented proxies",
-        "@everyone Your safety is our top priority.",
-        "If you can eat it, don't call it meat in 2025. Call it beef.",
-        "does anyone actually play among us in 2025",
+        "Your safety is our top priority.",
         "I-Tickle-Fat-Kids expanded my bookmarks with proxies",
         "I-Tickle-Fat-Kids is cool",
         "plaxer is cool",
         "Bruh, I don't even understand what's happening, I think a doors entity might be attacking us.",
         "There were no scan lines",
         "italian brainrot sucks",
-        "Me trying to resist the urge not to swear in the site every 10 seconds",
+        "Me trying to resist the urge not to swear every 10 seconds",
         "WHY AM I DRAWING EGGS?",
         "Yo mark, is minigames sus?",
-        "Beyond your viewport size.",
         "What's deodorant?",
         "When was the last time you showered?",
         "Pressing reload + power button deletes every blocker",
@@ -618,10 +642,41 @@ document.addEventListener("DOMContentLoaded", function() {
         "Minecraft Moog City 2 Theme",
         "Tab cloak me!",
         "Chattyice mod",
-        "No being ***** I-Tickle-Fat-Kids",
-        "proof im not fake DIOS ES BUENO TODO EL TIEMPO♰",
+        "No being gay I-Tickle-Fat-Kids",
+        "What's the wifi password?",
+        "I no wher yoo lives",
+        "Also try Links123!",
+        "oooh secret message 0_0",
+        "Better than ChattyWebsite 1.0.4",
+        "School routine: Open educational tab. Games. Teacher turns on goguardian. Close games. Teacher leaves computer. Games.",
+        "Made by Chattyice!",
+        "Made by Chattyice234 on github!",
+        "What is the perfect site?",
+        "Welcome back for the first time to Squirrel Stapler",
+        "pov: principals office",
+        "We support chronically online users",
+        "Press 0 now!",
+        "Unreal!",
+        "8.5/10!",
+        "where next update plz add pls where update vro 🙏",
+        "Tomorrow will be better than today",
+        "I can be located at Y level -58.",
+        "Today's mission: in a public place, eat crushed oreos out of an urn. I LOVE GRAMMAS COOKING 🗣🗣",
+        "what i got in my easter basket: peeps. peeps. peeps. peeps. peeps. peeps candy. peeps candy. peeps candy. peeps. peeps. peeps.",
+        "did the crane flies spawn in yet?",
+        "Compare ChattyWebsite to ChattyWebsite",
+        "ChattyWebsite. More like FattyWebsite",
+        "My mommy said im special ✨",
+        "Minigame in class",
+        "That's what she said",
+        "Don't worry! Surely you'll make it next time!",
+        "Jarvis, say the N word",
+        "America caw caw",
+        "wall of shame",
+        "Never new games",
+        "Wheres my windows 12 iso?",
+        "Stfu windows 10 eol",
         "With a panic key",
-        "Super Sigma Settings",
         "Press the ] key",
         "Now it's time for everybody's faaavorite subject: math!",
         "why tf does ntcatgamer want us to make a secret website so badly",
@@ -631,7 +686,14 @@ document.addEventListener("DOMContentLoaded", function() {
         "Oh, for the love of god.. Hey, welcome!",
         "Thank you for using ChattyWebsite",
         "I stole like 30 messages from Links123",
-        "Mind: Okay, we need a name for our site since we're going to be upgrading Australian Man Website. Make sure it's original and not just half of our online alias, that's just egotistica- Let's call it ChattyWebsite. Mind: Kill yourself.",
+        "Mind: Okay, we need a name for our site since we're going to be upgrading Australian Man Website. Make sure it's original and not just half of our online alias, that's- Let's call it ChattyWebsite. Mind: Kill yourself.",
+        "https://cwp-14577452.codehs.me",
+        "hee hee",
+        "wawa",
+        "NoLongerNull - Persistence",
+        "you're naaasty",
+        "I'm getting VERY crunchy. How would you like me to handle this???",
+        "Have you tried clicking me?",
         { type: "image", src: 'https://d31sxl6qgne2yj.cloudfront.net/wordpress/wp-content/uploads/20190121140627/Minecraft-Creeper-Head.jpg' },
         { type: "image", src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvkWYA2wiktf23Fz20KoF8W7ZH35EoOFT-fQ&s' },
         { type: "image", src: 'https://i.imgur.com/bxcvkh5.jpeg' },
