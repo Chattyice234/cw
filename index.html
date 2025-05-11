@@ -7,11 +7,11 @@
     <link rel="icon" type="image/png" href="https://i.imgur.com/PQhhSgy.png">
     <link rel="stylesheet" href="styles.css"> 
     <meta name="description" content="The best unblocked gaming site out there to play fun browser games and useful apps!">
-    <meta name="keywords" content="Unblocked Games, Games, Unblocked, Apps, Proxies, Chattyice, ChattyWebsite">
+    <meta name="keywords" content="Unblocked Games, Games, Unblocked, Apps, Proxies, Chattyice, ChattyWebsite, ChattyWebsite CodeHS, CodeHS">
 </head>
 <body>
     <!-- Main Menu -->
-    <button id="button-updlog" onclick="openUpdateLog()" title="Click here to view the update log">View Changelog - Version 1.0.5</button>
+    <button id="button-updlog" onclick="openUpdateLog()" title="Click here to view the update log">View Changelog - Version 1.0.6</button>
         
     <h1>~*{ 🌆 ChattyWebsite 🌆 }*~</h1>
     
@@ -62,14 +62,14 @@
      <div id="updlog" class= "hidden">
      <button class="button-c" onclick="closeUpdateLog();" title="Close Update log">×</button>
      <div class="header">
-     <h3 style="font-size: 50px; font-family: Varela Round, sans-serif; color: #3d88ff; margin-bottom: 0px;">Update 1.0.5: 5/8/25</h3>
+     <h3 style="font-size: 50px; font-family: Varela Round, Trebuchet MS; color: #3d88ff; margin-bottom: 0px;">Update 1.0.6: 5/10/25</h3>
      </div>
-     <h2 class="updh2"><li>Added a proxy</li></h2>
+     <h2 class="updh2"><li>Added a particles toggle in Settings</li><li>Added a toggle that blocks the page from being closed/redirected by a teacher or blocking extension</li><li>Added a custom background image setting</li><li>New button hover effect</li></h2>
      </div>
 
     <!-- Settings -->
      <div id="settings" style="display: none">
-     <h3 style="font-size: 50px; font-family: Varela Round, Arial, sans-serif; margin: 0; margin-top: 10px; cursor: default;">Settings
+     <h3 style="font-size: 50px; font-family: Varela Round, Trebuchet MS, sans-serif; margin: 0; margin-top: 10px; cursor: default;">Settings
         <span class="button__icon">
             <ion-icon name="settings-outline"></ion-icon>
         </span>
@@ -78,22 +78,46 @@
      <button class="button-st" id="aboutBlank" title="Open in about:blank">about:blank</button>
      <br>
      <br>
+     <div>
+    <label class="toggle-label">
+        <input type="checkbox" id="disableParticlesToggle" class="toggle-input">
+        <span class="toggle-slider"></span>
+        Disable Particles
+    </label>
+</div>
+<br>
+     <div>
+    <label class="toggle-label">
+        <input type="checkbox" id="blockTabToggle" class="toggle-input">
+        <span class="toggle-slider"></span>
+        Block tab from being closed
+    </label>
+</div>
+<div>
+  <br>
+    <h3>Custom Background Image</h3>
+    <input type="text" id="customBackgroundInput" class="settings-i" placeholder="Enter an image URL" autocomplete="off">
+    <button class="button-sc" onclick="setCustomBackground()" title="Save changes">Save
+        <span class="button__icon">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </span>
+    </button>
+</div>
+<br>
      <h3>Custom Tab Cloak</h3>
-     <input type="text" id="tabName" placeholder="Enter new tab name" class="settings-i">
+     <input type="text" id="tabName" placeholder="Enter new tab name" class="settings-i" autocomplete="off">
      <button class="button-sc" onclick="changeTabName()" title="Save changes">Save
          <span class="button__icon">
              <ion-icon name="checkmark-circle-outline"></ion-icon>
          </span>
      </button>
      <br>
-     <input type="text" id="tabIcon" placeholder="Enter new tab icon" class="settings-i">     
+     <input type="text" id="tabIcon" placeholder="Enter new tab icon" class="settings-i" autocomplete="off">     
      <button class="button-sc" onclick="changeTabIcon()" title="Save changes">Save
          <span class="button__icon">
              <ion-icon name="checkmark-circle-outline"></ion-icon>
          </span>
      </button>
-     <br>
-     <br>
      <h3>Tab Cloaks</h3>
      <br>
      <button id="ChattyWebsite" class="favicon"><img src="https://i.imgur.com/PQhhSgy.png" alt="ChattyWebsite" title="ChattyWebsite"></button>
@@ -106,14 +130,14 @@
      <br>
      <br>
      <h3>Panic Key</h3>
-     <h4>Select a key to press to quickly redirect to an educational site when someone (teacher, etc.) is approaching. You can also select a custom site to redirect to. Make sure this panic key is something you rarely press so you do not accidentally end up pressing it.</h4>
+     <h4>Select a key to press to quickly redirect to an educational site when someone (teacher, etc.) is approaching. You can also select a custom site to redirect to. Make sure this panic key is something you rarely press so you do not accidentally end up pressing it. If you have toggled the block tab close setting, this panic key will be harder to use.</h4>
      <span>Current Panic Key: </span>
       <span id="current-panic-key" class="key-display">]</span>
       <button id="change-panic-key-btn" class="button">Change Key</button>
       <span id="listening-status" class="panic-status"></span>
       <br>
       <span>Redirect URL: </span>
-      <input type="text" id="panic-url" class="settings-i" placeholder="Enter URL (e.g., https://google.com)" value="https://google.com">
+      <input type="text" id="panic-url" class="settings-i" placeholder="Enter URL (e.g., https://google.com)" value="https://google.com" autocomplete="off">
       <button onclick="savePanicSettings()" class="button">Save Settings</button>
       <br><br>
       <span id="panic-status" class="panic-status">Panic key is active</span>
