@@ -1,8 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-    /* Varela Round */
-
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'); /* Varela Round */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /* Raleway */
 
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://64.media.tumblr.com/d60fa89a6c6ef6b51790a079d7204540/f145147b69889cf3-a3/s640x960/1d7480b51aa3c7cfc46d85641dfd9f759eeadd95.gif');
+            background-color: #005;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #fff;
+            font-family: 'Varela Round', 'Trebuchet MS', Arial;
+            text-align: center;
+            user-select: none;
+        }
+        
         #container {
             display: flex;
             flex-direction: column;
@@ -30,7 +42,7 @@
              margin-right: 5px;
              font-family: Varela Round, Arial, sans-serif;
              font-size: 15px;
-          	 width: 30%;
+          	 width: 50%;
              height: 40px;
           	 border-radius: 6px;
              border: 0;
@@ -46,31 +58,17 @@
           border: 2px solid #005;
           cursor: pointer;
          }
-         
+ 
          .settings-i:focus { 
-         border: 2px solid #4196e1; 
-         width: 40%;
-         cursor: text;
-         }
-         
+            border: 2px solid #4196e1; 
+            cursor: text;
+            outline: none;
+        }
          
         .header {
            border-bottom: 5px solid #00008B;
            padding-bottom: 20px;
          }
-     
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('https://64.media.tumblr.com/d60fa89a6c6ef6b51790a079d7204540/f145147b69889cf3-a3/s640x960/1d7480b51aa3c7cfc46d85641dfd9f759eeadd95.gif');
-            background-color: #005;
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            color: #fff;
-            font-family: Varela Round, Trebuchet MS, Arial;
-            text-align: center;
-        }
         
         #updlog {
          overflow: auto;
@@ -84,35 +82,44 @@
          border-radius: 10px;
          }
         
-        #searchbar{ /* Credits to https://github.com/RicardoMarioSonic123 */
-            font-family: Raleway, Arial;
+        #searchbar{ 
+            font-family: 'Raleway', Arial, sans-serif;
             font-size: 15px;
-            padding: 15px;
-            width: 20%;
+            font-weight: bold;
+            padding: 16px;
+            width: 50%;
             border-radius: 6px;
             border: 0;
-            font-weight: 552;
             text-align: center;
             background-color: #003d80;
-            color: #4169E1;
-            transition: 0.3s all ease;
+            color: #ffffff;
+            transition: all 0.3s ease-in-out;
             border: 2px solid #121c7b;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            margin-top: 10px;
         }
         
         #searchbar:hover{
-            cursor: pointer;
-            background-color: #23278d;
-            border: 2px solid #4196e1;
+            background-color: #0056b3;
+            color: #ffffff;
+            border: 2px solid #4169E1;
+            box-shadow: 0 0 15px rgba(65, 105, 225, 0.8);
         }
-        
-        #searchbar:active{
-            background-color: paleturquoise;
-        }
-        
+
         #searchbar:focus{
             cursor: text;
-            width: 30%;
+            width: 55%;
             border: 2px solid #4196e1;
+            box-shadow: 0 0 20px rgba(65, 105, 225, 1);
+            background-color: #002b5a;
+            color: #ffffff;
+            outline: none;
+        }
+
+        #searchbar::placeholder {
+            color: #ffffff;
+            opacity: 1;
+            font-weight: bold;
         }
 
         body:hover {
@@ -123,7 +130,6 @@
             margin-top: 60px;
             font-size: 24px;
             font-weight: 700;
-            /* background-color: rgb(14, 55, 168); */
             background: linear-gradient(#007FFF, #324AB2, #224C98);
             border: 2px solid #4467C4;
             box-shadow: 0 0 0 2px #00316E, 0 0 0 4px #2234A8, 0 0 0 6px #00008C;
@@ -137,6 +143,8 @@
 
         h4 {
             font-family: 'Varela Round';
+            margin-left: 5px;
+            margin-right: 5px;
         }
 
         h3 {
@@ -178,7 +186,6 @@
             color: rgb(61, 136, 255);
         }
         
-        /* Hover effect */
         h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
             text-shadow: 0 0 10px rgba(52, 152, 219, 0.8), 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(52, 152, 219, 0.4);
         }
@@ -207,23 +214,6 @@
         }
         }
 
-        .button {
-            display: inline-block;
-            margin-top: 10px;
-            margin-left: 2px;
-            margin-right: 2px;
-            padding: 10px 20px;
-            background-color: #00008B;
-            color: #00FFFF;
-            border: 2px solid #00ff;
-            border-radius: 12px;
-            font-weight: 700;
-            font-family: Raleway;
-            cursor: pointer;
-            transition: 0.32s all ease;
-            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-        }
-        
         #button-updlog {
             display: inline-block;
             margin-top: 10px;
@@ -286,6 +276,19 @@
             transition: all 0.3s ease;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+        
+        #button-g:hover {
+            background-color: #4169E1;
+            color: #00FFFF;
+            box-shadow: 0 0 15px rgb(17, 27, 215),
+                0 0 30px rgba(255, 255, 255, 0.8);
+        }
+        
+        #button-g:active {
+            background-color: #23278d;
+            color: #549ea0;
+            border: 2px solid #121c7b;
+        }
 
         .button-req { 
             top: 0%; 
@@ -308,6 +311,19 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+        
+        .button-req:hover {
+            background-color: #4169E1;
+            color: #00FFFF;
+            box-shadow: 0 0 15px rgb(17, 27, 215),
+                0 0 30px rgba(255, 255, 255, 0.8);
+        }
+        
+        .button-req:active {
+            background-color: #23278d;
+            color: #549ea0;
+            border: 2px solid #121c7b;
         }
         
         #button-sg { 
@@ -348,6 +364,14 @@
             cursor: pointer;
             transition: background-color 0.3s;
          }
+         
+         .button-c:hover {
+            background-color: #4196e1;
+        }
+        
+        .button-c:active {
+            background-color: #23278d;
+        }
         
         .favicon {
              padding: 0px 0px;
@@ -381,108 +405,120 @@
             transform: scale(0.95);
         }
         
-        .button-c:hover {
-            background-color: #4196e1;
-        }
-        
-        .button-c:active {
-            background-color: #23278d;
-        }
-    
-        
         .button-st {
-             margin-left: 5px;
-             margin-right: 5px;
-             margin-bottom: 10px;
-             font-size: 15px;
-             font-weight: bold;
-             font-family: Raleway, sans-serif;
-             background-color: #00008B;
-             color: #00FFFF;
-             border: 2px solid #00ff;
-             border-radius: 12px;
-             cursor: pointer;
-             width: 24.7%;
-             height: 40px;
-             margin-top: 20px;
-             transition: 0.3s all ease;
-             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+              display: inline-block;
+              margin-top: 10px;
+              margin-left: 2px;
+              margin-right: 2px;
+              padding: 10px 20px;
+              width: 24.7%;
+              background-color: #00008B;
+              color: #00FFFF;
+              border: 2px solid #00ff;
+              border-radius: 12px;
+              font-weight: 700;
+              font-family: Raleway;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+              position: relative;
         }
         
-        .button-sc {
-             margin-left: 5px;
-             margin-right: 5px;
-             margin-bottom: 10px;
-             font-size: 15px;
-             font-weight: bold;
-             font-family: Raleway, sans-serif;
-             background-color: #00008B;
-             color: #00FFFF;
-             border: 2px solid #00ff;
-             border-radius: 12px;
-             cursor: pointer;
-             width: 15%;
-             height: 40px;
-             margin-top: 20px;
-             transition: 0.3s all ease;
-             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-        }
-     
-     .button-st:hover {
+       .button-st:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4),
+            0 0 15px rgb(17, 27, 215),
+            0 0 30px rgba(255, 255, 255, 0.8); /* Glow effect */
             background-color: #4169E1;
             color: #00FFFF;
-            box-shadow: 0 0 15px rgb(17, 27, 215),
-                /* Glow effect */
-                0 0 30px rgba(255, 255, 255, 0.8);
-            /* More intense glow effect */
         }
         
         .button-st:active {
+            transform: translateY(3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             background-color: #23278d;
             color: #549ea0;
             border: 2px solid #121c7b;
         }
         
-        #button-g:hover {
-            background-color: #4169E1;
-            color: #00FFFF;
-            box-shadow: 0 0 15px rgb(17, 27, 215),
-                /* Glow effect */
-                0 0 30px rgba(255, 255, 255, 0.8);
-            /* More intense glow effect */
+        .button-sc {
+             display: inline-block;
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 10px 20px;
+    background-color: #00008B;
+    color: #00FFFF;
+    border: 2px solid #00ff;
+    border-radius: 12px;
+    font-weight: 700;
+    font-family: Raleway;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
         }
         
-        #button-g:active {
-            background-color: #23278d;
-            color: #549ea0;
-            border: 2px solid #121c7b;
+        .button-sc:hover {
+            transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4),
+        0 0 15px rgb(17, 27, 215),
+        0 0 30px rgba(255, 255, 255, 0.8); /* Glow effect */
+    background-color: #4169E1;
+    color: #00FFFF;
         }
+        
+        .button-sc:active {
+            transform: translateY(3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background-color: #23278d;
+    color: #549ea0;
+    border: 2px solid #121c7b;
+        }
+        
+        .button {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 10px 20px;
+    background-color: #00008B;
+    color: #00FFFF;
+    border: 2px solid #00ff;
+    border-radius: 12px;
+    font-weight: 700;
+    font-family: Raleway;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4),
+        0 0 15px rgb(17, 27, 215),
+        0 0 30px rgba(255, 255, 255, 0.8); /* Glow effect */
+    background-color: #4169E1;
+    color: #00FFFF;
+}
+
+.button:active {
+    transform: translateY(3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background-color: #23278d;
+    color: #549ea0;
+    border: 2px solid #121c7b;
+}
         
         #button-updlog:hover {
             background-color: #4169E1;
             color: #00FFFF;
             box-shadow: 0 0 15px rgb(17, 27, 215),
-                /* Glow effect */
                 0 0 30px rgba(255, 255, 255, 0.8);
-            /* More intense glow effect */
         }
         
         #button-updlog:active {
-            background-color: #23278d;
-            color: #549ea0;
-            border: 2px solid #121c7b;
-        }
-
-        .button-req:hover {
-            background-color: #4169E1;
-            color: #00FFFF;
-            box-shadow: 0 0 15px rgb(17, 27, 215),
-                /* Glow effect */
-                0 0 30px rgba(255, 255, 255, 0.8);
-            /* More intense glow effect */
-        }
-        
-        .button-req:active {
             background-color: #23278d;
             color: #549ea0;
             border: 2px solid #121c7b;
@@ -492,9 +528,7 @@
             background-color: #4169E1;
             color: #00FFFF;
             box-shadow: 0 0 15px rgb(17, 27, 215),
-                /* Glow effect */
                 0 0 30px rgba(255, 255, 255, 0.8);
-            /* More intense glow effect */
         }
         
         #button-sg:active {
@@ -502,39 +536,12 @@
             color: #549ea0;
             border: 2px solid #121c7b;
         }
-        
-        .button-sc:hover {
-            background-color: #4169E1;
-            color: #00FFFF;
-            box-shadow: 0 0 15px rgb(17, 27, 215),
-                /* Glow effect */
-                0 0 30px rgba(255, 255, 255, 0.8);
-            /* More intense glow effect */
-        }
-        
-        .button-sc:active {
-            background-color: #23278d;
-            color: #549ea0;
-            border: 2px solid #121c7b;
-        }
 
-        .button:hover {
-            background-color: #4169E1;
-            color: #00FFFF;
-            box-shadow: 0 0 15px rgb(17, 27, 215),
-                /* Glow effect */
-                0 0 30px rgba(255, 255, 255, 0.8);
-            /* More intense glow effect */
-            transform: scale(1.1);
-        }
-        
         #button-s:hover {
             background-color: #4169E1;
             color: #00FFFF;
             box-shadow: 0 0 15px rgb(17, 27, 215),
-                /* Glow effect */
                 0 0 30px rgba(255, 255, 255, 0.8);
-            /* More intense glow effect */
         }
         
         #button-s:active {
@@ -543,12 +550,40 @@
             border: 2px solid #121c7b;
         }
         
-        .button:active {
-            background-color: #23278d;
-            color: #549ea0;
-            border: 2px solid #121c7b;
-            transform: scale(0.95);
-        }
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 10px 20px;
+    background-color: #00008B;
+    color: #00FFFF;
+    border: 2px solid #00ff;
+    border-radius: 12px;
+    font-weight: 700;
+    font-family: Raleway;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4),
+        0 0 15px rgb(17, 27, 215),
+        0 0 30px rgba(255, 255, 255, 0.8); /* Glow effect */
+    background-color: #4169E1;
+    color: #00FFFF;
+}
+
+.button:active {
+    transform: translateY(3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background-color: #23278d;
+    color: #549ea0;
+    border: 2px solid #121c7b;
+}
 
         #updlog {
          overflow: auto;
@@ -582,14 +617,11 @@
 
         #randomPhrase:hover {
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            /* Initial shadow effect */
             background-color: #4169E1;
             color: #00FFFF;
             box-shadow: 0 0 15px rgb(17, 27, 215),
-                /* Glow effect */
                 0 0 30px rgba(255, 255, 255, 0.8);
-            /* More intense glow effect */
-            
+
         }
         
         #randomPhrase:active{
@@ -600,20 +632,18 @@
             display: none;
         }
 
-        /* Updated styling for the BLOCKS message with white color */
         #blocksMessage {
             font-size: 18px;
             font-weight: bold;
             color: #fff;
-            /* White color */
             margin-top: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         #blocksMessage:Hover {
-            text-shadow: 0 0 5px #000; /* Add text shadow effect */
-            -webkit-animation: glow 1s; /* Add animation effect */
+            text-shadow: 0 0 5px #000;
+            -webkit-animation: glow 1s;
             animation: glow 1s;
         }
 
@@ -658,4 +688,48 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
             margin: 0 5px;
+        }
+        
+        .toggle-label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: Varela Round, Arial, sans-serif;
+          font-size: 15px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+
+        .toggle-input {
+            display: none;
+        }
+        
+        .toggle-slider {
+            width: 40px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 15px;
+            position: relative;
+            margin-right: 10px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .toggle-slider::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            transition: transform 0.2s ease;
+        }
+        
+        .toggle-input:checked + .toggle-slider {
+            background-color: #4196e1;
+        }
+        
+        .toggle-input:checked + .toggle-slider::before {
+            transform: translateX(20px);
         }
