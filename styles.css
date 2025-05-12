@@ -13,6 +13,7 @@
             font-family: 'Varela Round', 'Trebuchet MS', Arial;
             text-align: center;
             user-select: none;
+            transition: 0.3s all ease;
         }
         
         #container {
@@ -321,6 +322,38 @@
         }
         
         .button-req:active {
+            background-color: #23278d;
+            color: #549ea0;
+            border: 2px solid #121c7b;
+        }
+        
+        .theme-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #00008B;
+            color: #00FFFF;
+            border: 2px solid #00ff;
+            border-radius: 12px;
+            font-weight: 700;
+            font-family: Raleway, sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .theme-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4),
+                0 0 15px rgb(17, 27, 215),
+                0 0 30px rgba(255, 255, 255, 0.8);
+            background-color: #4169E1;
+            color: #00FFFF;
+        }
+        
+        .theme-button:active {
+            transform: translateY(3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             background-color: #23278d;
             color: #549ea0;
             border: 2px solid #121c7b;
