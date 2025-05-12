@@ -104,6 +104,56 @@ document.getElementById("Google").onclick = function() {
      localStorage.setItem("tabIcon", tabIcon);
      };
      
+     document.addEventListener("DOMContentLoaded", function () {
+    const particlesToggle = document.getElementById("particlesToggle");
+    const blockTabToggle = document.getElementById("blockTabToggle");
+
+    const particlesEnabled = localStorage.getItem("particlesEnabled") === "true";
+    const blockTabEnabled = localStorage.getItem("blockTabEnabled") === "true";
+
+    particlesToggle.checked = particlesEnabled;
+    blockTabToggle.checked = blockTabEnabled;
+
+    setParticlesState(particlesEnabled);
+
+    setBlockTabState(blockTabEnabled);
+
+    particlesToggle.addEventListener("change", function () {
+        const isEnabled = particlesToggle.checked;
+        localStorage.setItem("particlesEnabled", isEnabled);
+        setParticlesState(isEnabled);
+    });
+
+    blockTabToggle.addEventListener("change", function () {
+        const isEnabled = blockTabToggle.checked;
+        localStorage.setItem("blockTabEnabled", isEnabled);
+        setBlockTabState(isEnabled);
+    });
+
+    window.addEventListener("beforeunload", function (event) {
+        if (blockTabToggle.checked) {
+            event.preventDefault();
+            event.returnValue = "";
+        }
+    });
+});
+
+function setParticlesState(enabled) {
+    if (enabled) {
+        console.log("Particles enabled");
+    } else {
+        console.log("Particles disabled");
+    }
+}
+
+function setBlockTabState(enabled) {
+    if (enabled) {
+        console.log("Tab blocking enabled");
+    } else {
+        console.log("Tab blocking disabled");
+    }
+}
+     
 let blockTabEnabled = false;
 
 document.getElementById('blockTabToggle').addEventListener('change', function () {
@@ -113,7 +163,7 @@ document.getElementById('blockTabToggle').addEventListener('change', function ()
 window.addEventListener('beforeunload', function (event) {
     if (blockTabEnabled) {
         event.preventDefault();
-        event.returnValue = 'You have unsaved changes on the site. Are you sure you want to leave?';
+        event.returnValue = 'Are you sure you want to leave?';
     }
 });
 
@@ -125,20 +175,74 @@ document.getElementById('disableParticlesToggle').addEventListener('change', fun
     }
 });
 
-// Function to set a custom background image
 function setCustomBackground() {
     const input = document.getElementById('customBackgroundInput');
     const imageUrl = input.value.trim();
 
     if (imageUrl) {
-        // Set the background image to the custom URL
         document.body.style.backgroundImage = `url('${imageUrl}')`;
-        // Clear the input field
         input.value = '';
     } else {
         alert('Please enter a valid image URL.');
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const savedTheme = localStorage.getItem("selectedTheme");
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    }
+});
+
+function applyTheme(themeKey) {
+    document.body.classList.remove("theme-current", "theme-old", "theme-beta", "theme-alpha");
+
+    const launchGamesButton = document.getElementById("launchGames");
+    launchGamesButton.classList.remove("theme-current", "theme-old", "theme-beta", "theme-alpha");
+
+    if (themeKey === "current") {
+        document.body.style.backgroundImage = "url('https://64.media.tumblr.com/d60fa89a6c6ef6b51790a079d7204540/f145147b69889cf3-a3/s640x960/1d7480b51aa3c7cfc46d85641dfd9f759eeadd95.gif')";
+        document.body.style.backgroundColor = "#005";
+        document.body.classList.add("theme-current");
+
+        launchGamesButton.classList.add("theme-current");
+    } else if (themeKey === "old") {
+        document.body.style.backgroundImage = "url('https://i.redd.it/tnva3hgpheu71.gif')";
+        document.body.style.backgroundColor = "#000";
+        document.body.classList.add("theme-old");
+
+        launchGamesButton.classList.add("theme-old");
+    } else if (themeKey === "beta") {
+        document.body.style.backgroundImage = "url('https://preview.redd.it/probably-the-best-screenshot-ive-ever-taken-in-minecraft-v0-d2ep95z2r7d81.png?auto=webp&s=ae3b379a05c937d0eb486879a4ce9f52bb9fde49')";
+        document.body.style.backgroundColor = "#003366";
+        document.body.classList.add("theme-beta");
+
+        launchGamesButton.classList.add("theme-beta");
+    } else if (themeKey === "alpha") {
+        document.body.style.backgroundImage = "none";
+        document.body.style.backgroundColor = "#005";
+        document.body.classList.add("theme-alpha");
+
+        launchGamesButton.classList.add("theme-alpha");
+    }
+    localStorage.setItem("selectedTheme", themeKey);
+}
+
+document.getElementById("current-theme").addEventListener("click", function () {
+    applyTheme("current");
+});
+
+document.getElementById("old-theme").addEventListener("click", function () {
+    applyTheme("old");
+});
+
+document.getElementById("beta-theme").addEventListener("click", function () {
+    applyTheme("beta");
+});
+
+document.getElementById("alpha-theme").addEventListener("click", function () {
+    applyTheme("alpha");
+});
                         
      document.getElementById("Gmail").onclick = function() {
      var tabTitle = "Inbox (2103)";
@@ -204,14 +308,16 @@ function setCustomBackground() {
         var games = [
             { name: "Pandemonium Minigame", url: "https://redtide-stack.github.io/Pandemonium-Minigame-fork/" },
             { name: "Block Fist Games", url: "https://blockfistgames2.weebly.com/" },
-            { name: "COD Zombies", url: "https://nzp.*****" },
-            { name: "Eaglercraft 1.12 (REAL)", url: "https://eaglercraft.com/mc/1.12.2-wasm/" },
+            { name: "COD Zombies", url: "https://nzp.gay" },
             { name: "EaglyMC (Minecraft)", url: "https://eaglymc.com/" },
             { name: "Minecraft (1.5)", url: "https://sd592g.github.io/zj684od4lfg/" },
             { name: "Eaglercraft Server List", url: "https://servers.eaglercraft.com/" },
             { name: "Minecraft 1.8", url: "https://eaglercraft.com/mc/1.8.8-wasm/" },
+            { name: "Minecraft (1.8 Server 2)", url: "https://gaming-escape.github.io/public/assets/games/eaglercraft/index.html" },
             { name: "Minecraft (1.9)", url: "https://d272xss3wq00xu.cloudfront.net/1-9.html" },
             { name: "Minecraft (1.11)", url: "https://d272xss3wq00xu.cloudfront.net/1-11.html" },
+            { name: "Minecraft 1.12", url: "https://eaglercraft.com/mc/1.12.2-wasm/" },
+            { name: "Minecraft 1.12 Server 2", url: "https://gaming-escape.github.io/public/assets/games/minecraft-1.12/index.html" },
             { name: "Resent Client Eagler (1.8)", url: "https://reslauncher4.vercel.app" },
             { name: "Starlike Client Eagler (1.16)", url: "https://starlike.zumbiepig.dev/" },
             { name: "Eaglercraft (1.20)", url: "https://dfs3rzq44v6as.cloudfront.net/?frame=fullscreen/#/lessons/964c4358-60a7-4121-908e-63f6ae6e5ef0" },
@@ -222,11 +328,15 @@ function setCustomBackground() {
             { name: "Tortilla Games", url: "https://dfs3rzq44v6as.cloudfront.net"},
             { name: "Ultraviolet", url: "https://dfs3rzq44v6as.cloudfront.net/#/prxy" },
             { name: "Five Nights At Winston's", url: "https://g.deev.is/fnaw" },
-            { name: "1 (Reversed 2048)", url: "https://d272xss3wq00xu.cloudfront.net/2048/index.html" },
+            { name: "1 (Reversed 2048)", url: "https://lite.3kh0.net/projects/1/" },
             { name: "Bottle Flip 3D", url: "https://d272xss3wq00xu.cloudfront.net/bottle-flip-3d/index.html" },
             { name: "Neal.fun", url: "https://neal.fun" },
             { name: "Subway Surfers", url: "https://dddavit.github.io/subway/" },
+            { name: "Subway Surfers (Server 2)", url: "https://gaming-escape.github.io/public/assets/games/subway-surfers/index.html" },
+            { name: "Subway Surfers Monaco", url: "https://roblox-unblock.github.io/r8/subway-surfers-monaco/" },
+            { name: "Super Tunnel Rush", url: "https://gaming-escape.github.io/public/assets/games/super-tunnel-rush/index.html" },
             { name: "Slope", url: "https://mathadventure1.github.io/slope/slope/index.html" },
+            { name: "Slope (Server 2)", url: "https://gaming-escape.github.io/public/assets/games/slope/index.html" },
             { name: "Slope 2", url: "https://d3rtzzzsiu7gdr.cloudfront.net/gameplayer/index.html?Slope%202" },
             { name: "Slope 3", url: "https://slope3.com/" },
             { name: "Bloons Tower Defense", url: "https://lite.3kh0.net/projects/bloonstd/" },
@@ -235,7 +345,11 @@ function setCustomBackground() {
             { name: "Bloons Tower Defense 4", url: "https://selenite.laviewddns.com/semag/btd4/index.html" },
             { name: "Bloons Tower Defense 5", url: "https://selenite.laviewddns.com/semag/btd5/index.html" },
             { name: "Bloons Tower Defense 6", url: "https://selenite.laviewddns.com/semag/btd6/index.html" },
+            { name: "Fortnite Ripoff", url: "https://gaming-escape.github.io/public/assets/games/BuildNowGG/index.html" },
             { name: "Cookie Clicker", url: "https://eli-schwartz.github.io/cookieclicker/" },
+            { name: "Cookie Clicker Server 2", url: "https://gaming-escape.github.io/public/assets/games/cookie-clicker/index.html" },
+            { name: "Cookie Clicker 2024", url: "https://a6936-19424025.cluster7.canvas-user-content.com/courses/6936~1014013/files/6936~19424025/course%20files/cookie%20clicker/index.html?download=1&inline=1" },
+            { name: "Crazy Cars", url: "https://gaming-escape.github.io/public/assets/games/crazy-cars/index.html" },
             { name: "Drive Mad", url: "https://ubg365.github.io/drive-mad/play.html" },
             { name: "Drive Mad (Server 2)", url: "https://d272xss3wq00xu.cloudfront.net/drivemad/index.html" },
             { name: "Drive Mad Mod", url: "https://play.fancade.com/63BA239C20C40BF3" }, 
@@ -243,28 +357,41 @@ function setCustomBackground() {
             { name: "Ztype", url: "https://zty.pe" },
             { name: "3kh0.github.io (ad spammy)", url: "https://3kh0.github.io" },
             { name: "Hover Racer Drive", url: "https://ubg365.github.io/hover-racer-drive/" },
-            { name: "Monkey Mart", url: "https://ubg365.github.io/monkey-mart/play.html" },
-            { name: "Drift Boss", url: "https://ubg365.github.io/drift-boss/" },
+            { name: "Monkey Mart", url: "https://gaming-escape.github.io/public/assets/games/monkey-mart/index.html" },
+            { name: "Monkeytype Lite", url: "https://gaming-escape.github.io/public/assets/games/monkeytype-lite/index.html" },
+            { name: "Drift Boss", url: "https://roblox-unblock.github.io/r/drift-boss" },
+            { name: "Burnout Extreme Drift 2", url: "https://gaming-escape.github.io/public/assets/games/burnout-extreme-drift-2/index.html" },
             { name: "Madalin Stunt Cars 2", url: "https://ubg100.github.io/games/Madalin/index.html" },
+            { name: "Candy Crush", url: "https://gaming-escape.github.io/public/assets/games/candy-crush/index.html" },
+            { name: "Master Chess", url: "https://gaming-escape.github.io/public/assets/games/master-chess/index.html" },
             { name: "Breaking the bank", url: "https://mountain658.github.io/zbreakingthebank.html" },
-            { name: "Escaping the prison", url: "https://mountain658.github.io/zescapetheprison.html" },
-            { name: "Stealing the diamond", url: "https://mountain658.github.io/zstealingthediamond.html" },
-            { name: "Infiltrating the airship", url: "https://sz-games.github.io/games/Flash.html?game=/games/henry-airship/infiltratingtheairshipgame.swf" },
-            { name: "Fleeing the complex", url: "https://sz-games.github.io/games/Flash.html?game=https://sz-games.github.io/Games6/Henry%20Stickmin%20-%20Fleeing%20the%20Complex.swf?raw=true" },
+            { name: "Escaping the prison", url: "https://gaming-escape.github.io/public/assets/games/escaping-the-prison/index.html" },
+            { name: "Stealing the diamond", url: "https://gaming-escape.github.io/public/assets/games/stealing-the-diamond/index.html" },
+            { name: "Infiltrating the airship", url: "https://gaming-escape.github.io/public/assets/games/infiltrating-the-airship/index.html" },
+            { name: "Fleeing the complex", url: "https://gaming-escape.github.io/public/assets/games/fleeing-the-complex/index.html" },
+            { name: "Funny Shooter 2", url: "https://gaming-escape.github.io/public/assets/games/funny-shooter-2/index.html" },
             { name: "Free Rider", url: "https://freeriderhd.com" },
             { name: "Run 3", url: "https://lekug.github.io/tn6pS9dCf37xAhkJv/" },
+            { name: "Run 3 (Server 2)", url: "https://gaming-escape.github.io/public/assets/games/run-3/index.html" },
             { name: "Bloxorz", url: "https://ad-freegames.github.io/flash/game/bloxorz.html" },
-            { name: "Drift Hunters", url: "https://htmlxm.github.io/h/drift-hunters/" },
+            { name: "Drift Hunters", url: "https://obsidianig.com/games/drifthunters/" },
+            { name: "Choppy Orc", url: "https://gaming-escape.github.io/public/assets/games/choppy-orc/index.html" },
             { name: "Venge.io", url: "https://venge.io/" },
+            { name: "Venge.io (Server 2)", url: "https://gaming-escape.github.io/public/assets/games/venge-io/index.html" },
             { name: "Highway Racer Pro", url: "https://unblocked-games.s3.amazonaws.com/highway-racer-pro.html" }, 
             { name: "Hole.io", url: "https://hole-io.com/" },
-            { name: "Drift Hunters 2024", url: "https://unblocked-games.s3.amazonaws.com/drift-hunters-2024.html" },
             { name: "Webcraft", url: "https://jesgran.is-a.dev/webcraft/" }, 
             { name: "Sandspiel Studio", url: "https://studio.sandspiel.club" },
             { name: "Blackjack Casino", url: "https://www.yurk.com/games/black/" },
             { name: "FNAF", url: "https://ubg77.github.io/fix/fnaf1/" },
             { name: "Krunker.io", url: "https://krunker.io/" },
-            { name: "Tomb of the mask", url: "https://mountain658.github.io/g/tombofthemask/index.html" },
+            { name: "Tomb Of The Mask", url: "https://gaming-escape.github.io/public/assets/games/tomb-of-the-mask/index.html" },
+            { name: "Tomb Of The Mask (Server 2)", url: "https://mountain658.github.io/g/tombofthemask/index.html" },
+            { name: "Tag", url: "https://gaming-escape.github.io/public/assets/games/tag/index.html" },
+            { name: "Tag 2", url: "https://gaming-escape.github.io/public/assets/games/tag-2/index.html" },
+            { name: "Tunnel Rush", url: "https://gaming-escape.github.io/public/assets/games/tunnel-rush/index.html" },
+            { name: "Tunnel Rush (Server 2)", url: "https://ubg44.github.io/TunnelRush/" },
+            { name: "Tunnel Rush 2", url: "https://gaming-escape.github.io/public/assets/games/tunnel-rush-2/index.html" },
             { name: "worldguessr", url: "https://www.worldguessr.com/" },
             { name: "World's Hardest Game", url: "https://mountain658.github.io/zworldsHardestGame.html" },
             { name: "MinecraftSkins.net", url: "https://minecraftskins.net" },
@@ -272,18 +399,32 @@ function setCustomBackground() {
             { name: "Mr. Bullet", url:"https://www.yurk.com/games/mrbullet/" },
             { name: "Sandspiel", url: "https://sandspiel.club" },
             { name: "Slow Roads", url: "https://slowroads.io" },
+            { name: "Slow Roads (Server 2)", url: "https://gaming-escape.github.io/public/assets/games/slow-roads/index.html" },
             { name: "Backrooms", url: "https://adfree3kh0.github.io/projects/backrooms/index.html" },
-            { name: "Impossible Quiz", url: "https://adfree3kh0.github.io/projects/impossiblequiz/index.html" },
+            { name: "The Impossible Quiz", url: "https://adfree3kh0.github.io/projects/impossiblequiz/index.html" },
+            { name: "The Impossible Quiz 2", url: "https://archive.org/details/tiq2_swf" },
+            { name: "The Impossible Quiz 2 (Server 2)", url: "https://gaming-escape.github.io/public/assets/games/the-impossible-quiz-2/index.html" },
+            { name: "Tanuki Sunset", url: "https://gaming-escape.github.io/public/assets/games/tanuki-sunset/index.html" },
+            { name: "Idle Breakout", url: "https://gaming-escape.github.io/public/assets/games/idle-breakout/index.html" },
             { name: "Among Us Singleplayer", url: "https://adfree3kh0.github.io/projects/among-us/index.html" }, 
             { name: "A Dance Of Fire And Ice", url: "https://roblox-unblock.github.io/r8/a-dance-of-fire-and-ice/" },
-            { name: "Angry Birds Chrome", url: "https://gaming-escape.github.io/public/assets/games/angry-birds/" },
-            { name: "Bad Piggies", url: "https://www.friv.cm/bad-piggies/fullscreen/" },
-            { name: "Cluster Rush",  url: "https://duckmath.org/g4m3s/cluster-rush.html" },
-            { name: "Crossy Road", url: "https://selenite.cc/semag/crossyroad/index.html" },
+            { name: "Angry Birds", url: "https://gaming-escape.github.io/public/assets/games/angry-birds/" },
+            { name: "Bad Piggies", url: "https://gaming-escape.github.io/public/assets/games/bad-piggies/index.html" },
+            { name: "Bad Piggies (Server 2)", url: "https://www.friv.cm/bad-piggies/fullscreen/" },
+            { name: "Cluster Rush",  url: "https://roblox-unblock.github.io/r8/cluster-rush/" },
+            { name: "Crossy Road", url: "https://gaming-escape.github.io/public/assets/games/crossy-road/index.html" },
             { name: "Crossy Road (Server 2)", url: "https://d272xss3wq00xu.cloudfront.net/crossyroad/index.html" },
+            { name: "Crossy Road (Server 3)", url: "https://selenite.cc/semag/crossyroad/index.html" },
+            { name: "CSGO Clicker", url: "https://gaming-escape.github.io/public/assets/games/csgo-clicker/index.html" },
+            { name: "Cut The Rope", url: "https://gaming-escape.github.io/public/assets/games/cut-the-rope/index.html" },
             { name: "1v1.lol", url: "https://selenite.cc/semag/1v1lol/index.html" },
+            { name: "1v1.lol Fortnite (Play at home)", url: "https://1v1.lol" },
+            { name: "1v1.lol Server 2", url: "https://jungle.pages.dev/games/1v1lol/" },
+            { name: "1v1.lol Server 3", url: "https://player.work/1v1lol/index.html" },
             { name: "Bloxd.io", url: "https://bloxd.io" },
             { name: "CubeRealm.io", url: "https://cuberealm.io/" },
+            { name: "Super Mario Flash 2", url: "https://obsidianig.com/games/supermarioflash2/" },
+            { name: "Super Mario Bros", url: "https://playmario.github.io/HTML5_Client/" },
             { name: "Aim Trainer", url: "https://aimtrainer.io/" },
             { name: "Scrap Metal 1", url: "https://www.gamearter.com/game/scrap-metal/" },  
             { name: "Scrap Metal 2", url: "https://www.gamearter.com/game/scrap-metal-2/" },
@@ -292,9 +433,14 @@ function setCustomBackground() {
             { name: "Scrap Metal 5", url: "https://www.gamearter.com/game/scrap-metal-5/" },
             { name: "Scrap Metal 6", url: "https://www.gamearter.com/game/scrap-metal-6/" },
             { name: "GameArter", url: "https://www.gamearter.com/games" },
-            { name: "Geometry Dash Lite", url: "https://gaming-escape.github.io/public/assets/games/geometry-dash/" },
+            { name: "Geometry Dash Lite", url: "https://gaming-escape.github.io/public/assets/games/geometry-dash/index.html" },
+            { name: "Geometry Dash Lite (Server 2)", url: "https://gaming-escape.github.io/public/assets/games/geometry-dash/" },
+            { name: "Gladihoppers", url: "https://gaming-escape.github.io/public/assets/games/gladihoppers/index.html" },
             { name: "OvO", url: "https://gaming-escape.github.io/public/assets/games/ovo/" },
+            { name: "OvO Dimensions", url: "https://gaming-escape.github.io/public/assets/games/ovo-dimensions/index.html" },
             { name: "Basket Random", url: "https://roblox-unblock.github.io/r8/basket-random/" },
+            { name: "Soccer Random", url: "https://gaming-escape.github.io/public/assets/games/soccer-random/index.html" },
+            { name: "Volley Random", url: "https://gaming-escape.github.io/public/assets/games/volley-random/index.html" },
             { name: "FNAF 2", url: "https://selenite.cc/semag/fnaf2/index.html" },
             { name: "FNAF 3", url: "https://selenite.cc/semag/fnaf3/index.html" },
             { name: "FNAF 4", url: "https://selenite.cc/semag/fnaf4/index.html" },
@@ -304,7 +450,12 @@ function setCustomBackground() {
             { name: "Clicker", url: "https://elucidation.github.io/ClickerJs/" },
             { name: "Smashkarts.io", url: "https://smashkarts.io" },
             { name: "Pixel Force", url: "https://www.yurk.com/games/pixelforce/" },
+            { name: "Paper.io", url: "https://gaming-escape.github.io/public/assets/games/paper-io/index.html" },
+            { name: "Physibox", url: "https://gaming-escape.github.io/public/assets/games/physibox/index.html" },
+            { name: "Poor Eddie", url: "https://gaming-escape.github.io/public/assets/games/poor-eddie/index.html" },
+            { name: "Poly Track", url: "https://gaming-escape.github.io/public/assets/games/poly-track/index.html" },
             { name: "Happy Glass", url: "https://www.yurk.com/games/happyglass/" },
+            { name: "Happy Wheels", url: "https://gaming-escape.github.io/public/assets/games/happy-wheels/index.html" },
             { name: "Selenite (fixed)", url: "https://selenite.cc/" },
             { name: "Duck Life 1", url: "https://selenite.cc/semag/ducklife1/index.html" },
             { name: "Duck Life 2", url: "https://selenite.cc/semag/ducklife2/index.html" },
@@ -315,18 +466,16 @@ function setCustomBackground() {
             { name: "Stick Running", url: "https://www.yurk.com/games/stickrunning/" },
             { name: "Happy Filled Glass", url: "https://www.yurk.com/games/happyfilledglass/" },
             { name: "Elastic Man", url: "https://d21u3ic0kp9e91.cloudfront.net/elasticman/0/index.html" },
-            { name: "Tunnel Rush", url: "https://ubg44.github.io/TunnelRush/" },
             { name: "Interactive Buddy", url: "https://d3rtzzzsiu7gdr.cloudfront.net/gameplayer/index.html?Interactive%20Buddy" },
             { name: "Baldis Basics", url: "https://d3rtzzzsiu7gdr.cloudfront.net/files/baldisbasics/game.html" },
             { name: "Minecraft Classic", url: "https://cbgamesdev.github.io/chilibowlflash/minecrap/index.html" },
             { name: "2048", url: "https://2048game.com/" },
             { name: "Flappy Bird", url: "https://adfree3kh0.github.io/projects/flappy-bird/index.html" },
-            { name: "1v1.lol Server 2", url: "https://jungle.pages.dev/games/1v1lol/" },
-            { name: "1v1.lol Fortnite (Play at home)", url: "https://1v1.lol" },
-            { name: "Impossible Quiz 2", url: "https://archive.org/details/tiq2_swf" },
             { name: "Astra Client Eaglercraft 1.8", url: "https://barneycompiler.github.io/AstraClientEagler/javascript" },
             { name: "Tetris", url: "https://tetris.com/play-tetris" },
-            { name: "Stickman Swing", url: "https://www.yurk.com/games/stickmanswing"},
+            { name: "Stickman Swing", url: "https://www.yurk.com/games/stickmanswing" },
+            { name: "Stickman Hook", url: "https://gaming-escape.github.io/public/assets/games/stickman-hook/index.html" },
+            { name: "Stickman Bike", url: "https://gaming-escape.github.io/public/assets/games/stickman-bike/" },
             { name: "Google Easter Egg Games", url: "https://elgoog.im" },
             { name: "Duck Math Games", url: "https://duckmath.org/index.html" },
             { name: "Tower of Treasure", url: "https://beinternetawesome.withgoogle.com/en_us/interland/landing/tower-of-treasure" },
@@ -336,45 +485,53 @@ function setCustomBackground() {
             { name: "Friv.com", url: "https://friv.com" },
             { name: "Friday Night Funkin (FNF)", url: "https://roblox-unblock.github.io/r88/friday-night-funkin/" },
             { name: "Slither.io Ripoff", url: "https://gulper.io/" },
-            { name: "Infinite Craft", url: "https://infinite-craft.com/infinite-craft/" },
+            { name: "Infinite Craft", url: "https://copy05.github.io/InfinitCraft/" },
             { name: "We Become what we Behold", url: "https://gnhustgames.github.io/wbwwb/" },
-            { name: "Time Shooter", url: "https://games.crazygames.com/en_US/time-shooter/index.html" },
-            { name: "Time Shooter 2", url: "https://games.crazygames.com/en_US/time-shooter-2/index.html" },
-            { name: "Time Shooter 3", url: "https://games.crazygames.com/en_US/time-shooter-3-swat/index.html" },
+            { name: "Time Shooter", url: "https://selenite.laviewddns.com/semag/timeshooter1/index.html" },
+            { name: "Time Shooter 2", url: "https://gaming-escape.github.io/public/assets/games/time-shooter-2/" },
+            { name: "Time Shooter 3", url: "https://gaming-escape.github.io/public/assets/games/time-shooter-3/" },
             { name: "Chrome Dino", url: "https://htmlxm.github.io/h7/dinosaur-game/" },
             { name: "Getting over it ( Scratch )", url: "https://turbowarp.org/389464290/embed?autoplay&addons=remove-curved-stage-border,pause,gamepad" },
-            { name: "1v1.lol Server 3", url: "https://player.work/1v1lol/index.html" },
+            { name: "Tiny Fishing", url: "https://roblox-unblock.github.io/r/tiny-fishing/" },
             { name: "Eaglercraft Clients", url: "https://eaglercraftx1-8.github.io/" },
             { name: "Easyfun.gg", url: "https://easyfun.gg" },
             { name: "Minecraft Java Edition", url: "https://mcraft.fun" },
             { name: "Selenite Server 2", url: "https://selenite-copy.pages.dev" },
             { name: "WebMC (Eaglercraft Launcher)", url: "https://webmc.xyz/" },
-            { name: "Vex 3", url: "https://adfree3kh0.github.io/projects/vex3/index.html" },
-            { name: "Vex 4", url: "https://1kh0.github.io/projects/vex4/index.html" },
-            { name: "Vex 5", url: "https://adfree3kh0.github.io/projects/vex5/index.html" },
-            { name: "Vex 6", url: "https://adfree3kh0.github.io/projects/vex6/index.html" },
-            { name: "Vex 7", url: "https://main.dd8vt524eqsk2.amplifyapp.com/projects/vex7/index.html" },
-            { name: "Cookie Clicker 2024", url: "https://a6936-19424025.cluster7.canvas-user-content.com/courses/6936~1014013/files/6936~19424025/course%20files/cookie%20clicker/index.html?download=1&inline=1" },
+            { name: "Vex 3", url: "https://gaming-escape.github.io/public/assets/games/vex-3/index.html" },
+            { name: "Vex 4", url: "https://gaming-escape.github.io/public/assets/games/vex-4/index.html" },
+            { name: "Vex 5", url: "https://gaming-escape.github.io/public/assets/games/vex-5/index.html" },
+            { name: "Vex 6", url: "https://gaming-escape.github.io/public/assets/games/vex-6/index.html" },
+            { name: "Vex 7", url: "https://gaming-escape.github.io/public/assets/games/vex-7/index.html" },
+            { name: "Vex 8", url: "https://gaming-escape.github.io/public/assets/games/vex-8/index.html" },
+            { name: "Vex X3M", url: "https://gaming-escape.github.io/public/assets/games/vex-x3m/index.html" },
             { name: "Sandspiel Ripoff (Sandsaga)", url: "https://sandsaga.com" },
             { name: "Rocket Bot Royale", url: "https://rocketbotroyale2.winterpixel.io" },
             { name: "Retro Bowl", url: "https://ethonion10.neocities.org/" },
+            { name: "Retro Bowl (Server 2)", url: "https://gaming-escape.github.io/public/assets/games/retro-bowl/index.html" },
+            { name: "Retro Bowl College", url: "https://gaming-escape.github.io/public/assets/games/retro-bowl-college/index.html" },
+            { name: "Rooftop Snipers", url: "https://gaming-escape.github.io/public/assets/games/rooftop-snipers/index.html" },
+            { name: "Rooftop Snipers 2", url: "https://gaming-escape.github.io/public/assets/games/rooftop-snipers-2" },
+
             { name: "Soundboard", url: "https://sprintingsnail69.github.io/coolsounds/" },
             { name: "Snow Rider 3D", url: "https://gaming-escape.github.io/public/assets/games/snow-rider-3d/index.html" },
             { name: "Shell Shockers", url: "https://shellshock.io/" },
-            { name: "Moto X3M", url: "https://ubg365.github.io/moto-x3m/play.html" },
-            { name: "Moto X3M 2", url: "https://slope-game.github.io/newgame/motox3m-2/" },
+            { name: "Moto X3M", url: "https://gaming-escape.github.io/public/assets/games/moto-x3m/index.html" },
+            { name: "Moto X3M 2", url: "https://gaming-escape.github.io/public/assets/games/motox3m2/index.html" },
             { name: "Moto X3M 3", url: "https://slope-game.github.io/newgame/motox3m-3/" },
-            { name: "Moto X3M Winter", url: "https://unblocked-games.s3.amazonaws.com/games/2024/gm/moto-x3m-winter/index.html" },
-            { name: "Moto X3M Pool Party", url: "https://unblocked-games.s3.amazonaws.com/games/2024/gm/moto-x3m-pool-party/index.html" },
-            { name: "Moto X3M Spooky Land", url: "https://unblocked-games.s3.amazonaws.com/games/2024/gm/moto-x3m-spooky-land/index.html" },
+            { name: "Moto X3M Winter", url: "https://gaming-escape.github.io/public/assets/games/motox3m-winter/index.html" },
+            { name: "Moto X3M Pool", url: "https://gaming-escape.github.io/public/assets/games/motox3m-pool/index.html" },
+            { name: "Moto X3M Spooky", url: "https://gaming-escape.github.io/public/assets/games/motox3m-spooky/index.html" },
             { name: "Death Run 3D", url: "https://ubg365.github.io/death-run-3d/" },
             { name: "EggyCar", url: "https://ubg365.github.io/eggy-car/play.html" },
             { name: "Stack", url: "https://ubg365.github.io/stack/" },
+            { name: "Stack (Server 2)", url: "https://gaming-escape.github.io/public/assets/games/stack/index.html" },
             { name: "Super Mario 64", url: "https://downloads.retrostic.com/play.php?console_slug=n64&rom_url=https://downloads.retrostic.com/roms/Super%20Mario%2064%20%28U%29%20%5B%21%5D.zip" },
             { name: "Asteroids ( 1986 )", url: "https://downloads.retrostic.com/play.php?console_slug=atari-7800&rom_url=https://downloads.retrostic.com/roms/Asteroids.zip" },
             { name: "Asteroids ( 1979 )", url: "https://online-emulators.com/arcade/Asteroids_(rev_2)/asteroid" },
             { name: "Bosconian", url: "https://www.retrogames.cc/embed/42458-bosconian-old-version.html" },
             { name: "Doom", url: "https://bestdosgames.com/games/doom/play" },
+            { name: "Doodle Jump", url: "https://gaming-escape.github.io/public/assets/games/doodle-jump/index.html" },
             { name: "Half-Life 1", url: "https://x8bitrain.github.io/webXash/" },
             { name: "Tetris ( NES )", url: "https://downloads.retrostic.com/play.php?console_slug=nes&rom_url=https://downloads.retrostic.com/roms/Tetris%20%28USA%29.zip" },
             { name: "EarthBound", url: "https://downloads.retrostic.com/play.php?console_slug=snes&rom_url=https://downloads.retrostic.com/roms/EarthBound%20%28USA%29.zip" },
@@ -390,7 +547,7 @@ function setCustomBackground() {
             { name: "Evoworld.io", url: "https://evoworld.io/" },
             { name: "Block Blast", url: "https://blockblastonline.com" },
             { name: "Masked Forces Unlimited", url: "https://maskedforcesunlimited.github.io/" },
-            { name: "Bad Time Simulator", url: "https://badtimesimulator.io" },    
+            { name: "Bad Time Simulator", url: "https://jcw87.github.io/c2-sans-fight/" },    
             { name: "I Beat Kids", url: "https://ibeatkids.com" }, 
             { name: "N-Gon Enhanced", url: "https://n-gon-enhanced.vercel.app/" },
             { name: "Chattyicesmathwork", url: "https://chattyicesmathwork.neocities.org/" },
@@ -431,24 +588,8 @@ function setCustomBackground() {
                 lowestButtonPosition = buttonPosition;
             }
         });
-
-        // Add "Request a game" button
-        var requestButton = document.createElement("button");
-        requestButton.textContent = "Request a game/feature/Report A Bug";
-        requestButton.className = "button";
-        requestButton.style.position = "absolute";
-        requestButton.style.top = (lowestButtonPosition + 90) + "px"; // Position 90px below the lowest button
-        requestButton.style.left = "50%";
-        requestButton.style.transform = "translateX(-50%)";
-        requestButton.onclick = function() {
-            document.body.innerHTML = '<object id="requestGameForm" type="text/html" data="https://docs.google.com/forms/d/e/1FAIpQLSfxAKspb2_AFVdltjOXkeOaxdwdco2S0BRvRqV5grah331pmg/viewform?embedded=true" style="width: 100%; height: 100vh;"></object>';
-        };
-        document.body.appendChild(requestButton);
-
     }, 0);
 };
-
-
 
 document.getElementById("launchApps").onclick = function() {
     document.body.innerHTML = "<h7>Loading...<h7>";
@@ -694,6 +835,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "you're naaasty",
         "I'm getting VERY crunchy. How would you like me to handle this???",
         "Have you tried clicking me?",
+        "Now with theme settings!", 
         { type: "image", src: 'https://d31sxl6qgne2yj.cloudfront.net/wordpress/wp-content/uploads/20190121140627/Minecraft-Creeper-Head.jpg' },
         { type: "image", src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvkWYA2wiktf23Fz20KoF8W7ZH35EoOFT-fQ&s' },
         { type: "image", src: 'https://i.imgur.com/bxcvkh5.jpeg' },
