@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- Main Menu -->
-    <button id="button-updlog" onclick="openUpdateLog()" title="Click here to view the update log">View Changelog - Version 1.0.6</button>
+    <button id="button-updlog" onclick="openUpdateLog()" title="Click here to view the update log">Version 1.0.75</button>
         
     <h1>~*{ 🌆 ChattyWebsite 🌆 }*~</h1>
     
@@ -62,9 +62,9 @@
      <div id="updlog" class= "hidden">
      <button class="button-c" onclick="closeUpdateLog();" title="Close Update log">×</button>
      <div class="header">
-     <h3 style="font-size: 50px; font-family: Varela Round, Trebuchet MS; color: #3d88ff; margin-bottom: 0px;">Update 1.0.6: 5/10/25</h3>
+     <h3 style="font-size: 50px; font-family: Varela Round, Trebuchet MS; color: #3d88ff; margin-bottom: 0px;">Update 1.0.75: 5/11/25</h3>
      </div>
-     <h2 class="updh2"><li>Added a particles toggle in Settings</li><li>Added a toggle that blocks the page from being closed/redirected by a teacher or blocking extension</li><li>Added a custom background image setting</li><li>New button hover effect</li></h2>
+     <h2 class="updh2"><li>Added a particles toggle in Settings</li><li>Added a toggle that blocks the page from being closed/redirected by a teacher or blocking extension</li><li>Added a custom background image setting</li><li>New button hover effect</li><li>Fixed and added a lot of games</li><li>Added preset themes into Settings such as old theme, beta theme</li></h2>
      </div>
 
     <!-- Settings -->
@@ -86,7 +86,7 @@
     </label>
 </div>
 <br>
-     <div>
+ <div>
     <label class="toggle-label">
         <input type="checkbox" id="blockTabToggle" class="toggle-input">
         <span class="toggle-slider"></span>
@@ -96,14 +96,19 @@
 <div>
   <br>
     <h3>Custom Background Image</h3>
-    <input type="text" id="customBackgroundInput" class="settings-i" placeholder="Enter an image URL" autocomplete="off">
-    <button class="button-sc" onclick="setCustomBackground()" title="Save changes">Save
-        <span class="button__icon">
-            <ion-icon name="checkmark-circle-outline"></ion-icon>
-        </span>
-    </button>
+  <input type="text" id="customBackgroundInput" class="settings-i" placeholder="Enter an image URL" autocomplete="off">
+  <button class="button-sc" onclick="setCustomBackground()" title="Save changes">Save
+      <span class="button__icon">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </span>
+  </button>
 </div>
-<br>
+    <h3>Theme Settings</h3>
+    <button id="current-theme" class="theme-button">Current Theme</button>
+    <button id="old-theme" class="theme-button">Gold Theme</button>
+    <button id="beta-theme" class="theme-button">Beta Theme</button>
+    <button id="alpha-theme" class="theme-button">Alpha Theme</button>
+    <br>
      <h3>Custom Tab Cloak</h3>
      <input type="text" id="tabName" placeholder="Enter new tab name" class="settings-i" autocomplete="off">
      <button class="button-sc" onclick="changeTabName()" title="Save changes">Save
