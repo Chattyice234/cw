@@ -1,7 +1,6 @@
 # ChattyWebsite
-Welcome to ChattyWebsite, the perfect gaming website that has a wide collection of fun browser games and useful apps!
+This has been archived due to lack of motivation and interest, as well as the site is starting to get blocked on my main code editor and it has made me lose even more motivation to keep going.
 
-Make sure you download this site as a file if it is starting to get blocked, by pressing Ctrl + S on the page or downloading the raw file from this repo.
 <hr>
 
 # Credits
